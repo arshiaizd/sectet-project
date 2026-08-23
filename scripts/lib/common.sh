@@ -129,6 +129,9 @@ prepare_runtime_shards() {
 configure_runtime() {
   export TOKENIZERS_PARALLELISM="${TOKENIZERS_PARALLELISM:-false}"
   export PYTHONUNBUFFERED=1
+  # Gradient attribution creates differently sized activation graphs repeatedly.
+  # Expandable segments prevent reserved CUDA blocks from fragmenting.
+  export PYTORCH_CUDA_ALLOC_CONF="${PYTORCH_CUDA_ALLOC_CONF:-expandable_segments:True}"
   # Local checkpoints still work with these set to 0. Users can explicitly set
   # either variable to 1 when they require a fully offline run.
   export HF_HUB_OFFLINE="${HF_HUB_OFFLINE:-0}"
