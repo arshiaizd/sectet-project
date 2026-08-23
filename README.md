@@ -55,6 +55,13 @@ Expected local assets on the cluster:
 /mnt/vilab/scratch/arshia/datasets/coco/val2017
 ```
 
+## Portable 250-image launchers
+
+For clone-and-run commands covering EAGLE, our method, the input-level
+baseline, TAM, LLaVA-CAM, and IGOS++ on one to four GPUs, see
+[`PORTABLE_RUNS.md`](PORTABLE_RUNS.md). Every launcher takes the COCO
+location as its required argument and uses the same audited 250-case manifest.
+
 ## Current methods
 
 ### Activation patching (`ours/`)

@@ -1,7 +1,4 @@
 import os
-# Set the huggingface mirror and cache path
-os.environ["HF_ENDPOINT"] = "https://hf-mirror.com" # for Chinese
-os.environ["HF_HOME"] = "./model_checkpoint/hf_cache"
 os.environ.setdefault("HF_HUB_OFFLINE", "1")
 os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
 
@@ -38,6 +35,10 @@ def parse_args():
                         type=str,
                         default='datasets/coco_single_target_once_qwen25vl-3B.json',
                         help='Datasets.')
+    parser.add_argument('--model-id',
+                        type=str,
+                        default=MODEL_ID,
+                        help='Local Qwen checkpoint path or Hugging Face model ID.')
     parser.add_argument('--save-dir', 
                         type=str, default='./baseline_results/Qwen2.5-VL-3B-coco-object/TAM',
                         help='output directory to save results')
@@ -144,12 +145,12 @@ def main(args):
     # Load Qwen2.5-VL
     # default: Load the model on the available device(s)
     model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
-        MODEL_ID, torch_dtype="auto", device_map="auto"
+        args.model_id, torch_dtype="auto", device_map="auto"
     )
     model.eval()
     
     # default processor
-    processor = AutoProcessor.from_pretrained(MODEL_ID)
+    processor = AutoProcessor.from_pretrained(args.model_id)
     tokenizer = processor.tokenizer
     
     with open(args.eval_list, "r") as f:

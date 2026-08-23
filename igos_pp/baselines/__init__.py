@@ -1,10 +1,4 @@
-from .atman_text import AtManTextAttributor
-from .gradient_text import GradientTextAttributor, InputXGradientTextAttributor
-from .tokenshap_text import TokenSHAPTextAttributor
+"""Isolated IGOS++ baseline package.
 
-__all__ = [
-    "AtManTextAttributor",
-    "GradientTextAttributor",
-    "InputXGradientTextAttributor",
-    "TokenSHAPTextAttributor",
-]
+Import the vendored implementation explicitly from ``baselines.IGOS_pp``.
+"""

@@ -38,6 +38,10 @@ def parse_args():
                         type=str,
                         default='/home/mmd/asal/EAGLE/datasets/coco_single_target_once_qwen25vl-7B-subset100.json',
                         help='Datasets.')
+    parser.add_argument('--model-id',
+                        type=str,
+                        default=MODEL_ID,
+                        help='Local Qwen checkpoint path or Hugging Face model ID.')
     parser.add_argument('--superpixel-algorithm',
                         type=str,
                         default="slico",
@@ -266,7 +270,7 @@ def main(args):
     # Load Qwen2.5-VL from the local server path
     # default: Load the model on the available device(s)
     model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
-        MODEL_ID,
+        args.model_id,
         torch_dtype=model_dtype,
         device_map={"": device},
         attn_implementation=attention_implementation,
@@ -274,7 +278,7 @@ def main(args):
     model.eval()
     
     # default processor
-    processor = AutoProcessor.from_pretrained(MODEL_ID)
+    processor = AutoProcessor.from_pretrained(args.model_id)
     tokenizer = processor.tokenizer
     
     # Encapsulation Qwen
