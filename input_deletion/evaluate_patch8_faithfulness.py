@@ -36,6 +36,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--input-csv", type=Path, required=True, nargs="+")
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--patches-per-step", type=int, default=8)
+    parser.add_argument(
+        "--eval-list",
+        type=Path,
+        help="Optional benchmark manifest used to select and order image groups.",
+    )
+    parser.add_argument("--shard-index", type=int, default=0)
+    parser.add_argument("--num-shards", type=int, default=1)
     return parser.parse_args()
 
 
@@ -244,6 +251,10 @@ def main() -> None:
     args = parse_args()
     if args.patches_per_step <= 0:
         raise ValueError("--patches-per-step must be positive")
+    if args.num_shards <= 0:
+        raise ValueError("--num-shards must be positive")
+    if not 0 <= args.shard_index < args.num_shards:
+        raise ValueError("--shard-index must be in [0, --num-shards)")
     args.output_dir.mkdir(parents=True, exist_ok=True)
     json_dir = args.output_dir / "json"
     npy_dir = args.output_dir / "npy"
@@ -257,6 +268,26 @@ def main() -> None:
     if len(sample_indices) != len(set(sample_indices)):
         raise ValueError("input CSV files contain overlapping dataset samples")
     groups.sort(key=lambda rows: int(rows[0]["dataset_sample_index"]))
+
+    if args.eval_list is not None:
+        records = json.loads(args.eval_list.read_text(encoding="utf-8"))
+        expected_names = [Path(record["image_path"]).name for record in records]
+        if len(expected_names) != len(set(expected_names)):
+            raise ValueError("evaluation manifest contains duplicate image paths")
+        by_image = {Path(rows[0]["image_path"]).name: rows for rows in groups}
+        missing = [name for name in expected_names if name not in by_image]
+        if missing:
+            raise ValueError(
+                "attribution CSVs are missing manifest images: " + ", ".join(missing[:10])
+            )
+        groups = [by_image[name] for name in expected_names]
+
+    groups = groups[args.shard_index :: args.num_shards]
+    print(
+        f"evaluation shard {args.shard_index}/{args.num_shards}: "
+        f"{len(groups)} images",
+        flush=True,
+    )
     for rows in groups:
         validate_group(rows)
         stem = Path(rows[0]["image_path"]).stem

@@ -10,8 +10,8 @@ PROJECT_DIR="/mnt/vilab/scratch/arshia/projects/izadi/input_deletion"
 MODEL_DIR="/mnt/vilab/scratch/arshia/models/Qwen2.5-VL-7B-Instruct"
 COCO_DIR="/mnt/vilab/scratch/arshia/datasets/coco/val2017"
 EVAL_LIST="/mnt/vilab/scratch/arshia/projects/izadi/shared/coco_mask_tail_30_benchmark.json"
-ATTRIBUTION_DIR="$PROJECT_DIR/results/input_deletion_mask_tail_30"
-OUTPUT_DIR="$ATTRIBUTION_DIR/evaluation_patch8"
+ATTRIBUTION_DIR="$PROJECT_DIR/results/input_deletion_mask_tail_250"
+OUTPUT_DIR="$ATTRIBUTION_DIR/evaluation_patch8_first30"
 POINT_GAME="$PROJECT_DIR/../shared/eval_point_game_coco.py"
 
 mkdir -p "$OUTPUT_DIR"
@@ -34,9 +34,16 @@ for rank in 0 1 2 3; do
   CUDA_VISIBLE_DEVICES="$rank" python -u evaluate_patch8_faithfulness.py \
     --model-id "$MODEL_DIR" \
     --coco-root "$COCO_DIR" \
-    --input-csv "$ATTRIBUTION_DIR/rank${rank}.csv" \
+    --input-csv \
+      "$ATTRIBUTION_DIR/rank0.csv" \
+      "$ATTRIBUTION_DIR/rank1.csv" \
+      "$ATTRIBUTION_DIR/rank2.csv" \
+      "$ATTRIBUTION_DIR/rank3.csv" \
     --output-dir "$OUTPUT_DIR" \
-    --patches-per-step 8 &
+    --patches-per-step 8 \
+    --eval-list "$EVAL_LIST" \
+    --shard-index "$rank" \
+    --num-shards 4 &
   pids+=("$!")
 done
 
