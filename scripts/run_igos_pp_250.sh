@@ -12,9 +12,9 @@ fi
 REPO="$(repo_root)"
 PYTHON="$(resolve_python)"
 COCO_ROOT="$(normalize_coco_root "$1")"
-MODEL_ARG="${2:-${MODEL_ID:-Qwen/Qwen2.5-VL-7B-Instruct}}"
+MODEL_ARG="$(normalize_model_id "${2:-${MODEL_ID:-Qwen/Qwen2.5-VL-7B-Instruct}}")"
 MANIFEST="$REPO/shared/coco_mask_tail_250_benchmark.json"
-OUTPUT="${3:-${OUTPUT_DIR:-$REPO/igos_pp/results/mask_tail_250_portable/IGOS_PP}}"
+OUTPUT="$(resolve_output_path "${3:-${OUTPUT_DIR:-$REPO/igos_pp/results/mask_tail_250_portable/IGOS_PP}}")"
 WORKERS="$(detect_worker_count "$PYTHON")"
 SHARDS="$OUTPUT/.runtime_shards/${WORKERS}gpu"
 

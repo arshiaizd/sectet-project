@@ -16,11 +16,31 @@ die() {
 normalize_coco_root() {
   local supplied="$1"
   if [[ -d "$supplied/val2017" ]]; then
-    printf '%s\n' "$supplied/val2017"
+    printf '%s\n' "$(cd "$supplied/val2017" && pwd)"
   elif [[ -d "$supplied" ]]; then
-    printf '%s\n' "$supplied"
+    printf '%s\n' "$(cd "$supplied" && pwd)"
   else
     die "COCO directory does not exist: $supplied"
+  fi
+}
+
+normalize_model_id() {
+  local supplied="
+resolve_python() {"
+  if [[ -d "" ]]; then
+    printf '%s\n' "$(cd "" && pwd)"
+  else
+    printf '%s\n' ""
+  fi
+}
+
+resolve_output_path() {
+  local supplied="
+resolve_python() {"
+  if [[ "" == /* ]]; then
+    printf '%s\n' ""
+  else
+    printf '%s\n' "$(pwd)/"
   fi
 }
 

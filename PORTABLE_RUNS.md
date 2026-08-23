@@ -103,3 +103,38 @@ HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 \
   /datasets/coco \
   /models/Qwen2.5-VL-7B-Instruct
 ```
+
+## Unified all-input runner
+
+For a single entry point, use `scripts/run_benchmark_250.sh`. It performs
+runtime dependency checks, validates all 250 COCO images, optionally installs
+Python requirements, optionally downloads a pinned Qwen snapshot, selects one
+or more methods, applies the one-to-four GPU fallback, runs attribution, resumes
+completed work, and validates all 250 outputs.
+
+```bash
+./scripts/run_benchmark_250.sh \
+  --method eagle \
+  --method ours \
+  --coco-dir /datasets/coco \
+  --model /models/Qwen2.5-VL-7B-Instruct \
+  --num-gpus 1 \
+  --output-root /experiments/coco250
+```
+
+To download and pin the model as part of the run:
+
+```bash
+./scripts/run_benchmark_250.sh \
+  --method all \
+  --coco-dir /datasets/coco \
+  --model Qwen/Qwen2.5-VL-7B-Instruct \
+  --model-revision HUGGING_FACE_COMMIT_HASH \
+  --download-model-to /models/qwen25vl7b \
+  --output-root /experiments/coco250
+```
+
+Run `./scripts/run_benchmark_250.sh --help` for every accepted input. The
+`--install-deps` option installs `requirements.txt`, but a CUDA-compatible
+PyTorch and torchvision build must already be installed because their correct
+wheel index depends on the target machine.

@@ -15,3 +15,5 @@ seaborn==0.13.2
 PyMuPDF==1.24.14
 yake==0.4.8
 pycocotools
+
+accelerate==1.4.0
