@@ -115,7 +115,6 @@ required = {
     "qwen_vl_utils": "qwen-vl-utils",
     "numpy": "numpy",
     "PIL": "Pillow",
-    "pycocotools": "pycocotools",
 }
 missing = []
 for module, package in required.items():
