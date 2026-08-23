@@ -25,24 +25,25 @@ normalize_coco_root() {
 }
 
 normalize_model_id() {
-  local supplied="
-resolve_python() {"
-  if [[ -d "" ]]; then
-    printf '%s\n' "$(cd "" && pwd)"
+  local supplied="$1"
+  [[ -n "$supplied" ]] || die "Model ID/path cannot be empty."
+  if [[ -d "$supplied" ]]; then
+    printf '%s\n' "$(cd "$supplied" && pwd)"
   else
-    printf '%s\n' ""
+    printf '%s\n' "$supplied"
   fi
 }
 
 resolve_output_path() {
-  local supplied="
-resolve_python() {"
-  if [[ "" == /* ]]; then
-    printf '%s\n' ""
+  local supplied="$1"
+  [[ -n "$supplied" ]] || die "Output path cannot be empty."
+  if [[ "$supplied" == /* ]]; then
+    printf '%s\n' "$supplied"
   else
-    printf '%s\n' "$(pwd)/"
+    printf '%s\n' "$(pwd)/$supplied"
   fi
 }
+
 
 resolve_python() {
   local candidate="${PYTHON_BIN:-python}"
