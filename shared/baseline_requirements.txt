@@ -1,0 +1,5 @@
+# Additional imports required by the official baseline implementations.
+einops==0.8.1
+seaborn==0.13.2
+PyMuPDF==1.24.14
+yake==0.4.8

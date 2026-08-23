@@ -1,0 +1,53 @@
+# Python and editors
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.idea/
+.vscode/
+.DS_Store
+
+# Local environments and secrets
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+*.pem
+*.key
+
+# Models, checkpoints, and tensor artifacts
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.npy
+*.npz
+
+# Experiment outputs and logs
+**/results/
+eagle/reports/
+ours/reports/
+*.log
+*.tmp
+*.zip
+wandb/
+
+# Generated report artifacts while keeping report source code
+reports/*.pdf
+reports/previews/
+reports/three_method_30/
+
+# Dataset review images and local copied examples
+/000000007088.jpg
+manual_target_review_images/
+
+# Generated searches, shards, and intermediate caption audits
+shared/coco_mask_tail_seed_search_*/
+shared/coco_mask_tail_caption_valid_seed_search_*/
+
+# Superseded duplicated manifests; canonical copies live in shared/
+eagle/coco_eval_250_seed_20260815.json
+eagle/coco_single_target_once_qwen25vl-7B.json
