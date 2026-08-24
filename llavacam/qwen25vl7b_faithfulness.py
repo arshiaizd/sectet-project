@@ -40,6 +40,7 @@ def parse_args():
                         help='')
     parser.add_argument('--eval-dir', 
                         type=str, default='./baseline_results/Qwen2.5-VL-7B-MMVP-VQA/IGOS_PP')
+    parser.add_argument('--model-id', type=str, default=MODEL_ID)
     args = parser.parse_args()
     return args
 
@@ -119,9 +120,10 @@ class QwenVLAdaptor(torch.nn.Module):
             padding=True,
             return_tensors="pt",
         )
-        self.generated_ids = self.generated_ids[:max(self.target_token_position)]   #bug
-        inputs['input_ids'] = self.generated_ids
-        inputs['attention_mask'] = torch.ones_like(self.generated_ids)
+        target_end = int(np.max(self.target_token_position))
+        teacher_ids = self.generated_ids[:, :target_end]
+        inputs['input_ids'] = teacher_ids
+        inputs['attention_mask'] = torch.ones_like(teacher_ids)
         # Compatibility only: recompute stale processor tensors after
         # replacing the prompt with the teacher-forced target sequence.
         for stale_key in ("position_ids", "cache_position", "rope_deltas"):
@@ -133,11 +135,11 @@ class QwenVLAdaptor(torch.nn.Module):
             outputs = self.model(
                 **inputs,
                 return_dict=True,
-                use_cache=True,
+                use_cache=False,
             )
             all_logits = outputs.logits  # [batch_size, seq_len, vocab_size]
         
-        if self.generated_ids != None:
+        if self.generated_ids is not None:
             returned_logits = all_logits[:, self.target_token_position - 1] # The reason for the minus 1 is that the generated content is in the previous position
             returned_logits = self.softmax(returned_logits)
             
@@ -174,12 +176,12 @@ def main(args):
     # Load Qwen2.5-VL
     # default: Load the model on the available device(s)
     model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
-        MODEL_ID, torch_dtype="auto", device_map="auto"
+        args.model_id, torch_dtype="auto", device_map="auto"
     )
     model.eval()
     
     # default processor
-    processor = AutoProcessor.from_pretrained(MODEL_ID)
+    processor = AutoProcessor.from_pretrained(args.model_id)
     tokenizer = processor.tokenizer
     
     # Encapsulation Qwen
@@ -199,7 +201,7 @@ def main(args):
     
     for content in tqdm(contents):
         
-        if "coco" in args.eval_list:
+        if "image_path" in content:
             image_path = os.path.join(args.Datasets, content["image_path"])
             save_json_path = os.path.join(save_json_root_path, content["image_path"].replace(".jpg", ".json"))
             text_prompt = "Describe the image in one factual English sentence of no more than 20 words. Do not include information that is not clearly visible."
@@ -232,19 +234,15 @@ def main(args):
         json_file["deletion_word_score"] = []
         json_file["region_area"] = []
         
-        if "target" in args.eval_list:
+        if "target_generated_index" in content:
             json_file["select_category"] = content["select_category"]
             json_file["location"] = content["location"]
             json_file["segmentation"] = content["segmentation"]
-            
-        if "target" in args.eval_list:
             selected_interpretation_token_id = [content["target_generated_index"]]
             selected_interpretation_token_word_id = [content["target_generated_id"]]
-            Qwen.generated_ids = torch.tensor([content["generated_ids"]], dtype=torch.long).to(model.device).detach()
         else:
             selected_interpretation_token_id = content["selected_interpretation_token_id"]
             selected_interpretation_token_word_id = content["selected_interpretation_token_word_id"]
-            Qwen.generated_ids = torch.tensor(content["generated_ids"], dtype=torch.long).to(model.device).detach()
         
         messages = [
             {
@@ -272,7 +270,32 @@ def main(args):
             return_tensors="pt",
         )
         inputs = inputs.to(model.device)    # dict_keys(['input_ids', 'attention_mask', 'pixel_values', 'image_grid_thw'])
-        
+
+        if "selected_coco_caption" in content:
+            caption_ids = tokenizer(
+                content["selected_coco_caption"], add_special_tokens=False
+            )["input_ids"]
+            target_index = int(content["target_generated_index"])
+            if not 0 <= target_index < len(caption_ids):
+                raise IndexError(
+                    f"target_generated_index={target_index} outside caption token range "
+                    f"{len(caption_ids)}"
+                )
+            if int(caption_ids[target_index]) != int(content["target_generated_id"]):
+                raise ValueError("Stored target token id does not match selected COCO caption")
+            teacher_ids = inputs["input_ids"][0].detach().cpu().tolist()
+            teacher_ids += [int(value) for value in caption_ids]
+            Qwen.generated_ids = torch.tensor(
+                [teacher_ids], dtype=torch.long, device=model.device
+            ).detach()
+        else:
+            generated_ids = content["generated_ids"]
+            if generated_ids and not isinstance(generated_ids[0], list):
+                generated_ids = [generated_ids]
+            Qwen.generated_ids = torch.tensor(
+                generated_ids, dtype=torch.long, device=model.device
+            ).detach()
+
         Qwen.target_token_position = np.array(selected_interpretation_token_id) + len(inputs['input_ids'][0])
         Qwen.selected_interpretation_token_word_id = selected_interpretation_token_word_id
     

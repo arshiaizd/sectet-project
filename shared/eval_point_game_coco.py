@@ -528,6 +528,57 @@ def run(args) -> Dict[str, Any]:
                 print(f"[skip] {json_name}: {type(e).__name__}: {e}")
                 continue
 
+    elif args.map_source == "dense":
+        # ------ dense TAM / LLaVA-CAM heatmaps ------
+        with open(args.eval_list, encoding="utf-8") as f:
+            dataset = json.load(f)
+        npy_root = os.path.join(args.explanation_dir, "npy")
+        selected = (dataset[args.begin:args.end] if args.end > 0
+                    else dataset[args.begin:])
+
+        for offset, content in enumerate(selected, start=args.begin):
+            image_name = content["image_path"]
+            try:
+                if is_excepted(image_name):
+                    num_excepted += 1
+                    rows.append({"image_path": image_name,
+                                 "dataset_sample_index": offset,
+                                 "pg_box": np.nan, "pg_mask": np.nan,
+                                 "note": "excepted (ignored)"})
+                    continue
+                image = cv2.imread(os.path.join(args.coco_root, image_name))
+                if image is None:
+                    raise FileNotFoundError(f"image not found: {image_name}")
+                orig_h, orig_w = image.shape[:2]
+                saliency = np.load(
+                    os.path.join(npy_root, os.path.splitext(image_name)[0] + ".npy")
+                )
+                if saliency.ndim != 2 or not np.isfinite(saliency).all():
+                    raise ValueError(f"invalid dense saliency map: {saliency.shape}")
+                if saliency.shape != (orig_h, orig_w):
+                    saliency = cv2.resize(
+                        saliency.astype(float), (orig_w, orig_h),
+                        interpolation=cv2.INTER_LINEAR,
+                    )
+                point_xy = (argmax_point_xy(saliency)
+                            if args.pg_criterion == "centroid" else None)
+                pg_box, pg_seg = score_point_game(
+                    args.pg_criterion, content["location"], content["segmentation"],
+                    orig_h, orig_w, point_xy=point_xy, saliency_map=saliency
+                )
+                pg_box_value.append(pg_box)
+                pg_seg_value.append(pg_seg)
+                rows.append({"image_path": image_name,
+                             "dataset_sample_index": offset,
+                             "select_category": content.get("select_category", ""),
+                             "pg_box": pg_box, "pg_mask": pg_seg, "note": ""})
+            except Exception as error:
+                print(f"[skip] {image_name}: {type(error).__name__}: {error}")
+                rows.append({"image_path": image_name,
+                             "dataset_sample_index": offset,
+                             "pg_box": np.nan, "pg_mask": np.nan,
+                             "note": str(error)})
+
     else:
         # ------ our patch / superpixel CSV ------
         with open(args.eval_list, encoding="utf-8") as f:
@@ -643,7 +694,7 @@ def run(args) -> Dict[str, Any]:
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description="EAGLE-faithful Point Game on COCO "
                                             "(EAGLE / our-patch / our-superpixel).")
-    p.add_argument("--map-source", choices=["eagle", "patch", "superpixel"], required=True)
+    p.add_argument("--map-source", choices=["eagle", "dense", "patch", "superpixel"], required=True)
 
     p.add_argument("--pg-criterion", choices=["centroid", "argmax"], default="centroid",
                    help="Point Game criterion. 'centroid' (default, FAIR): reduce "
@@ -684,8 +735,10 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--out-summary", type=str, default="./point_game_summary.json")
     args = p.parse_args()
 
-    if args.map_source == "eagle" and not args.explanation_dir:
-        p.error("--map-source eagle requires --explanation-dir")
+    if args.map_source in ("eagle", "dense") and not args.explanation_dir:
+        p.error(f"--map-source {args.map_source} requires --explanation-dir")
+    if args.map_source == "dense" and not args.eval_list:
+        p.error("--map-source dense requires --eval-list")
     if args.map_source in ("patch", "superpixel"):
         if not args.csv:
             p.error(f"--map-source {args.map_source} requires --csv")
