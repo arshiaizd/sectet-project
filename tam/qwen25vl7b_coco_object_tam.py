@@ -8,7 +8,8 @@ import cv2
 import json
 import traceback
 
-from transformers import Qwen2_5_VLForConditionalGeneration, AutoTokenizer, AutoProcessor
+from transformers import (Qwen2_5_VLForConditionalGeneration, AutoTokenizer,
+                          AutoProcessor, LogitsProcessor, LogitsProcessorList)
 from qwen_vl_utils import process_vision_info
 
 import argparse
@@ -62,7 +63,24 @@ def atomic_save_npy(path, array):
         np.save(stream, array)
     os.replace(temporary_path, path)
 
-def tam_demo_for_qwen25_vl(model, processor, image_path, prompt_text, token_id, save_path):
+class ForceCaptionTokens(LogitsProcessor):
+    """Force an audited caption while retaining generate() hidden states for TAM."""
+
+    def __init__(self, prompt_length, token_ids):
+        self.prompt_length = int(prompt_length)
+        self.token_ids = [int(token_id) for token_id in token_ids]
+
+    def __call__(self, input_ids, scores):
+        step = input_ids.shape[1] - self.prompt_length
+        if 0 <= step < len(self.token_ids):
+            forced_scores = torch.full_like(scores, -float("inf"))
+            forced_scores[:, self.token_ids[step]] = 0
+            return forced_scores
+        return scores
+
+
+def tam_demo_for_qwen25_vl(model, processor, image_path, prompt_text, token_id,
+                           save_path, forced_caption_ids=None):
     # Prepare input message with image/video and prompt
     if isinstance(image_path, list):
         messages = [{"role": "user", "content": [{"type": "video", "video": image_path}, {"type": "text", "text": prompt_text}]}]
@@ -75,15 +93,24 @@ def tam_demo_for_qwen25_vl(model, processor, image_path, prompt_text, token_id, 
     inputs = processor(text=[text], images=image_inputs, videos=video_inputs, padding=True, return_tensors="pt")
     inputs = inputs.to(model.device)
 
-    # Generate model output with hidden states for visualization
-    outputs = model.generate(
-        **inputs,
-        do_sample=False,      # Disable sampling and use greedy search instead
-        num_beams=1,          # Set to 1 to ensure greedy search instead of beam search.
-        max_new_tokens=128,
-        output_hidden_states=True, # ---> TAM needs hidden states
-        return_dict_in_generate=True
-    )
+    # Generate model output with hidden states for visualization. Audited COCO
+    # captions are forced token-by-token so TAM sees the same sequence as EAGLE.
+    generation_kwargs = {
+        "do_sample": False,
+        "num_beams": 1,
+        "max_new_tokens": 128,
+        "output_hidden_states": True,
+        "return_dict_in_generate": True,
+    }
+    if forced_caption_ids is not None:
+        if not forced_caption_ids:
+            raise ValueError("Selected COCO caption tokenized to an empty sequence")
+        generation_kwargs["max_new_tokens"] = len(forced_caption_ids)
+        generation_kwargs["logits_processor"] = LogitsProcessorList([
+            ForceCaptionTokens(inputs["input_ids"].shape[1], forced_caption_ids)
+        ])
+
+    outputs = model.generate(**inputs, **generation_kwargs)
 
     generated_ids = outputs.sequences
 
@@ -211,10 +238,30 @@ def main(args):
         selected_interpretation_token_id = content["target_generated_index"]
         # selected_interpretation_token_word_id = [content["target_generated_id"]]
 
+        forced_caption_ids = None
+        if "selected_coco_caption" in content:
+            forced_caption_ids = tokenizer(
+                content["selected_coco_caption"],
+                add_special_tokens=False,
+            )["input_ids"]
+            target_index = int(content["target_generated_index"])
+            if not 0 <= target_index < len(forced_caption_ids):
+                raise IndexError(
+                    f"target_generated_index={target_index} outside caption token range "
+                    f"{len(forced_caption_ids)}"
+                )
+            if int(forced_caption_ids[target_index]) != int(content["target_generated_id"]):
+                raise ValueError("Stored target token id does not match selected COCO caption")
+
         image = cv2.imread(image_path)
 
         try:
-            heatmap = tam_demo_for_qwen25_vl(model, processor, image_path, text_prompt, token_id=selected_interpretation_token_id, save_path=os.path.join(visualization_root_path, content["image_path"]))
+            heatmap = tam_demo_for_qwen25_vl(
+                model, processor, image_path, text_prompt,
+                token_id=selected_interpretation_token_id,
+                save_path=os.path.join(visualization_root_path, content["image_path"]),
+                forced_caption_ids=forced_caption_ids,
+            )
             
             # Save npy file
             atomic_save_npy(output_path, np.array(heatmap))

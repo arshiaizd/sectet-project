@@ -136,8 +136,28 @@ def main(args):
 
         selected_interpretation_token_id = [content["target_generated_index"]]
         selected_interpretation_token_word_id = [content["target_generated_id"]]
-        
-        explainer.generated_ids = torch.tensor([content["generated_ids"]], dtype=torch.long).to(model.device).detach()
+
+        if "selected_coco_caption" in content:
+            output_word_id = tokenizer(
+                content["selected_coco_caption"],
+                add_special_tokens=False,
+            )["input_ids"]
+            target_index = int(content["target_generated_index"])
+            if not 0 <= target_index < len(output_word_id):
+                raise IndexError(
+                    f"target_generated_index={target_index} outside caption token range "
+                    f"{len(output_word_id)}"
+                )
+            if int(output_word_id[target_index]) != int(content["target_generated_id"]):
+                raise ValueError("Stored target token id does not match selected COCO caption")
+            prompt_ids = inputs["input_ids"][0].detach().cpu().tolist()
+            generated_ids = prompt_ids + [int(value) for value in output_word_id]
+        else:
+            generated_ids = content["generated_ids"]
+
+        explainer.generated_ids = torch.tensor(
+            [generated_ids], dtype=torch.long, device=model.device
+        ).detach()
         explainer.target_token_position = np.array(selected_interpretation_token_id) + len(inputs['input_ids'][0])
         explainer.selected_interpretation_token_word_id = selected_interpretation_token_word_id
     

@@ -531,11 +531,9 @@ def TAM(tokens, vision_shape, logit_list, special_ids, vision_input, \
             img_map = TAM(tokens, vision_shape, logit_list, special_ids, vision_input, processor, \
                           save_fn if t == len(prompt) else '', [0, t], img_scores_list, eval_only)
 
-            ## the first prompt token is used to reflect the differenec of activation degrees
-            if t == 0:
-                first_ori = img_map
 
-        return first_ori
+        # The final recursive map corresponds to the first generated token.
+        return img_map
 
     # assign class id
     if round_idx == 0:
