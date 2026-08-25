@@ -11,7 +11,7 @@ PROJECT_DIR="/mnt/vilab/scratch/arshia/projects/izadi/ours"
 MODEL_DIR="/mnt/vilab/scratch/arshia/models/Qwen2.5-VL-7B-Instruct"
 COCO_DIR="/mnt/vilab/scratch/arshia/datasets/coco/val2017"
 EVAL_LIST="/mnt/vilab/scratch/arshia/projects/izadi/shared/coco_mask_tail_250_benchmark.json"
-ATTRIBUTION_DIR="$PROJECT_DIR/results/ours_mask_tail_250_v2"
+ATTRIBUTION_DIR="$PROJECT_DIR/results/ours_mask_tail_250_old_prompt"
 OUTPUT_DIR="$ATTRIBUTION_DIR/evaluation_patch8"
 POINT_GAME="$PROJECT_DIR/../shared/eval_point_game_coco.py"
 

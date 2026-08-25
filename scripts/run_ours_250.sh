@@ -14,7 +14,7 @@ PYTHON="$(resolve_python)"
 COCO_ROOT="$(normalize_coco_root "$1")"
 MODEL_ARG="$(normalize_model_id "${2:-${MODEL_ID:-Qwen/Qwen2.5-VL-7B-Instruct}}")"
 MANIFEST="$REPO/shared/coco_mask_tail_250_benchmark.json"
-OUTPUT="$(resolve_output_path "${3:-${OUTPUT_DIR:-$REPO/ours/results/ours_mask_tail_250_portable}}")"
+OUTPUT="$(resolve_output_path "${3:-${OUTPUT_DIR:-$REPO/ours/results/ours_mask_tail_250_old_prompt_portable}}")"
 WORKERS="$(detect_worker_count "$PYTHON")"
 RUN_DIR="$OUTPUT/${WORKERS}gpu"
 
@@ -37,6 +37,7 @@ for ((rank=0; rank<WORKERS; rank++)); do
     --coco-root "$COCO_ROOT" \
     --eval-list "$MANIFEST" \
     --output-csv "$output_csv" \
+    --question-template "Is there a {object_label} in the image or not? Answer with exactly one word: yes or no." \
     --begin "$begin" \
     --end "$end" \
     --start-layer 0 \

@@ -10,7 +10,7 @@ PROJECT_DIR="/mnt/vilab/scratch/arshia/projects/izadi/ours"
 MODEL_DIR="/mnt/vilab/scratch/arshia/models/Qwen2.5-VL-7B-Instruct"
 COCO_DIR="/mnt/vilab/scratch/arshia/datasets/coco/val2017"
 EVAL_LIST="/mnt/vilab/scratch/arshia/projects/izadi/shared/coco_mask_tail_250_benchmark.json"
-OUTPUT_DIR="$PROJECT_DIR/results/ours_mask_tail_250_v2"
+OUTPUT_DIR="$PROJECT_DIR/results/ours_mask_tail_250_old_prompt"
 
 mkdir -p "$OUTPUT_DIR"
 cd "$PROJECT_DIR"
@@ -30,6 +30,7 @@ for rank in 0 1 2 3; do
     --coco-root "$COCO_DIR" \
     --eval-list "$EVAL_LIST" \
     --output-csv "$OUTPUT_DIR/rank${rank}.csv" \
+    --question-template "Is there a {object_label} in the image or not? Answer with exactly one word: yes or no." \
     --begin "${begins[$rank]}" \
     --end "${ends[$rank]}" \
     --start-layer 0 \

@@ -81,8 +81,8 @@ DEFAULT_OUTPUT_CSV = "./our_method_insertion_online_encoder.csv"
 SYSTEM_PROMPT = "You are a precise vision assistant. Follow instructions exactly."
 
 YES_NO_PROMPT_TEMPLATE = (
-    "Does the visible image provide strong and specific visual evidence of a "
-    "{object_label}?\nAnswer only yes or no."
+    "Is there a {object_label} in the image or not? "
+    "Answer with exactly one word: yes or no."
 )
 
 # Candidate surface forms are used in addition to a vocabulary scan. Only

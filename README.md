@@ -70,8 +70,7 @@ The current method injects source vision-encoder activations into a white
 baseline and scores summed yes-token probability with:
 
 ```text
-Does the visible image provide strong and specific visual evidence of a <object>?
-Answer only yes or no.
+Is there a <object> in the image or not? Answer with exactly one word: yes or no.
 ```
 
 ### Input insertion/deletion (`input_deletion/`)
