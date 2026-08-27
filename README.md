@@ -41,7 +41,7 @@ The EPFL RunAI jobs use:
 ```
 
 The verified environment uses Python 3.11, PyTorch 2.5.1+cu124,
-Transformers 4.49.0, and OpenCV contrib 4.11. Install a CUDA-compatible
+Transformers 4.55.0, and OpenCV contrib 4.11. Install a CUDA-compatible
 PyTorch build first, then:
 
 ```bash
@@ -61,6 +61,9 @@ For clone-and-run commands covering EAGLE, our method, the input-level
 baseline, TAM, LLaVA-CAM, and IGOS++ on one to four GPUs, see
 [`PORTABLE_RUNS.md`](PORTABLE_RUNS.md). Every launcher takes the COCO
 location as its required argument and uses the same audited 250-case manifest.
+
+The official InternVL3.5-8B baseline launchers and evaluation commands are
+documented in [`INTERNVL_BASELINES.md`](INTERNVL_BASELINES.md).
 
 ## Current methods
 

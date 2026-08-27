@@ -1,0 +1,51 @@
+{
+  "method": "LLaVA-CAM",
+  "cohort_manifest": "shared/coco_mask_tail_150_drop100_smallest_masks.json",
+  "num_images": 150,
+  "sensitivity_threshold": 0.4,
+  "source_result_directory": "llavacam/results/mask_tail_250_portable/LLaVACAM",
+  "source_point_game_csv": "reports/pg_linear_drop100_smallest_masks/llava_cam_point_game_per_image.csv",
+  "per_image_metrics_csv": "reports/mask_tail_150_drop100_metrics/llava_cam_per_image_metrics.csv",
+  "metrics": {
+    "insertion_auc": {
+      "mean": 0.37939861237330663,
+      "standard_error": 0.026634974659888205,
+      "n": 150
+    },
+    "deletion_auc": {
+      "mean": 0.3729495278095389,
+      "standard_error": 0.026815515334326277,
+      "n": 150
+    },
+    "highest_confidence": {
+      "mean": 0.6302601480484009,
+      "standard_error": 0.02811821241992002,
+      "n": 150
+    },
+    "sensitive_insertion_auc": {
+      "mean": 0.5157349543758379,
+      "standard_error": 0.030980898449417718,
+      "n": 58
+    },
+    "sensitive_deletion_auc": {
+      "mean": 0.47264451881647834,
+      "standard_error": 0.03343090663971315,
+      "n": 58
+    },
+    "sensitive_highest_confidence": {
+      "mean": 0.857354525862069,
+      "standard_error": 0.020035528017881294,
+      "n": 58
+    },
+    "point_game_box": {
+      "mean": 0.35333333333333333,
+      "standard_error": 0.03915970474562284,
+      "n": 150
+    },
+    "point_game_mask": {
+      "mean": 0.22666666666666666,
+      "standard_error": 0.03429920547036889,
+      "n": 150
+    }
+  }
+}

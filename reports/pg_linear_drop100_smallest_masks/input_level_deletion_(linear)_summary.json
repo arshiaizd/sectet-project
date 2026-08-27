@@ -1,0 +1,11 @@
+{
+  "method": "Input-level deletion (linear)",
+  "num_scored": 150,
+  "point_game_box_mean": 0.88,
+  "point_game_box_standard_error": 0.0265329983228432,
+  "point_game_mask_mean": 0.7466666666666667,
+  "point_game_mask_standard_error": 0.03551108329855676,
+  "excluded_by": "100 lowest mask_pixels; ties broken by image_id",
+  "source_per_image_csv": "input_deletion/results/input_deletion_mask_tail_250/evaluation_patch8/point_game_per_image_linear.csv",
+  "filtered_per_image_csv": "reports/pg_linear_drop100_smallest_masks/input_level_deletion_(linear)_point_game_per_image.csv"
+}

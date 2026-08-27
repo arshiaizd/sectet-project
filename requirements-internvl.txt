@@ -1,8 +1,9 @@
+# Dedicated InternVL3.5 environment requirements.
 # Install a CUDA-compatible torch/torchvision build separately.
 transformers==4.55.0
 tokenizers==0.21.4
 safetensors==0.4.5
-qwen-vl-utils==0.0.8
+accelerate==1.4.0
 numpy==1.26.4
 scipy==1.11.4
 scikit-learn==1.4.2
@@ -15,5 +16,4 @@ seaborn==0.13.2
 PyMuPDF==1.24.14
 yake==0.4.8
 pycocotools
-
-accelerate==1.4.0
+qwen-vl-utils==0.0.8

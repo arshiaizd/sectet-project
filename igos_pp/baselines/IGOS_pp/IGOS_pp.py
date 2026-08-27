@@ -260,7 +260,7 @@ def gen_explanations_qwenvl(model, processor, image, text_prompt, tokenizer, pos
         
     return masks, superimposed_img
 
-def gen_explanations_internvl(model, processor, image, text_prompt, tokenizer, positions=None, select_word_id=None):
+def gen_explanations_internvl(model, processor, image, text_prompt, tokenizer, positions=None, select_word_id=None, generated_token_ids=None):
     input_size = (image.size[1], image.size[0])
     size=32
     opt = 'NAG'
@@ -300,7 +300,8 @@ def gen_explanations_internvl(model, processor, image, text_prompt, tokenizer, p
     ]
     
     # Preparation for inference
-    inputs = processor.apply_chat_template(messages1, add_generation_prompt=True, tokenize=True, return_dict=True, return_tensors="pt").to(model.device, dtype=torch.bfloat16)
+    model_dtype = next(model.parameters()).dtype
+    inputs = processor.apply_chat_template(messages1, add_generation_prompt=True, tokenize=True, return_dict=True, return_tensors="pt").to(model.device, dtype=model_dtype)
     # inputs_blur = processor.apply_chat_template(messages1, add_generation_prompt=True, tokenize=True, return_dict=True, return_tensors="pt").to(model.device, dtype=torch.bfloat16)
 
     image_tensor = inputs['pixel_values']
@@ -308,15 +309,22 @@ def gen_explanations_internvl(model, processor, image, text_prompt, tokenizer, p
     blur_tensor = image_tensor * 0  # blur image cant choose salient word
     
     input_ids = inputs['input_ids']
-    with torch.no_grad():
-        generated_ids = model.generate(
-            **inputs, 
-            do_sample=False,      # Disable sampling and use greedy search instead
-            num_beams=1,          # Set to 1 to ensure greedy search instead of beam search.
-            max_new_tokens=128)
-        generated_ids_trimmed = [   # 去掉图像和prompt的文本
-            out_ids[len(in_ids) :] for in_ids, out_ids in zip(inputs.input_ids, generated_ids)
-        ]
+    if generated_token_ids is None:
+        with torch.no_grad():
+            generated_ids = model.generate(
+                **inputs, do_sample=False, num_beams=1, max_new_tokens=128
+            )
+            generated_ids_trimmed = [
+                out_ids[len(in_ids):]
+                for in_ids, out_ids in zip(inputs.input_ids, generated_ids)
+            ]
+    else:
+        generated_ids_trimmed = [torch.as_tensor(
+            generated_token_ids, dtype=torch.long, device=model.device
+        )]
+        generated_ids = torch.cat(
+            [inputs["input_ids"], generated_ids_trimmed[0].unsqueeze(0)], dim=1
+        )
     output_text = processor.batch_decode(
         generated_ids_trimmed, skip_special_tokens=True, clean_up_tokenization_spaces=False
     )
@@ -358,7 +366,7 @@ def gen_explanations_internvl(model, processor, image, text_prompt, tokenizer, p
             ],
         }
     ]
-    inputs = processor.apply_chat_template(messages2, add_generation_prompt=True, tokenize=True, return_dict=True, return_tensors="pt").to(model.device, dtype=torch.bfloat16)
+    inputs = processor.apply_chat_template(messages2, add_generation_prompt=True, tokenize=True, return_dict=True, return_tensors="pt").to(model.device, dtype=model_dtype)
     input_ids = inputs["input_ids"]
     
     y = torch.stack(generated_ids_trimmed, dim=0)

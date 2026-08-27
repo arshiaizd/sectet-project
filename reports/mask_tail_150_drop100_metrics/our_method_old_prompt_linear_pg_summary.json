@@ -1,0 +1,51 @@
+{
+  "method": "Our method (old prompt, linear PG)",
+  "cohort_manifest": "shared/coco_mask_tail_150_drop100_smallest_masks.json",
+  "num_images": 150,
+  "sensitivity_threshold": 0.4,
+  "source_result_directory": "ours/results/ours_mask_tail_250_old_prompt/evaluation_patch8",
+  "source_point_game_csv": "reports/pg_linear_drop100_smallest_masks/our_method_(old_prompt,_linear)_point_game_per_image.csv",
+  "per_image_metrics_csv": "reports/mask_tail_150_drop100_metrics/our_method_old_prompt_linear_pg_per_image_metrics.csv",
+  "metrics": {
+    "insertion_auc": {
+      "mean": 0.9471265607878901,
+      "standard_error": 0.007136042125343383,
+      "n": 150
+    },
+    "deletion_auc": {
+      "mean": 0.2509363996186593,
+      "standard_error": 0.01355264136693631,
+      "n": 150
+    },
+    "highest_confidence": {
+      "mean": 0.9926545015970866,
+      "standard_error": 0.0027516374437015906,
+      "n": 150
+    },
+    "sensitive_insertion_auc": {
+      "mean": 0.9575695416854022,
+      "standard_error": 0.004898441272758155,
+      "n": 146
+    },
+    "sensitive_deletion_auc": {
+      "mean": 0.25337163192740036,
+      "standard_error": 0.013741214150792045,
+      "n": 146
+    },
+    "sensitive_highest_confidence": {
+      "mean": 0.9959259596589494,
+      "standard_error": 0.0015203835946537515,
+      "n": 146
+    },
+    "point_game_box": {
+      "mean": 0.92,
+      "standard_error": 0.02222520487067834,
+      "n": 150
+    },
+    "point_game_mask": {
+      "mean": 0.7933333333333333,
+      "standard_error": 0.033171868444173504,
+      "n": 150
+    }
+  }
+}

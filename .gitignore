@@ -45,6 +45,7 @@ reports/three_method_30/
 manual_target_review_images/
 
 # Generated searches, shards, and intermediate caption audits
+shared/generated/
 shared/coco_mask_tail_seed_search_*/
 shared/coco_mask_tail_caption_valid_seed_search_*/
 

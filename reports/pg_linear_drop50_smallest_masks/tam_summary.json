@@ -1,0 +1,11 @@
+{
+  "method": "TAM",
+  "num_scored": 200,
+  "point_game_box_mean": 0.47,
+  "point_game_box_standard_error": 0.03529164207004259,
+  "point_game_mask_mean": 0.405,
+  "point_game_mask_standard_error": 0.0347113093962184,
+  "excluded_by": "50 lowest mask_pixels; ties broken by image_id",
+  "source_per_image_csv": "tam/results/mask_tail_250_portable/TAM/point_game_per_image.csv",
+  "filtered_per_image_csv": "reports/pg_linear_drop50_smallest_masks/tam_point_game_per_image.csv"
+}

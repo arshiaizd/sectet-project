@@ -1,0 +1,11 @@
+{
+  "method": "Our method (old prompt, linear)",
+  "num_scored": 200,
+  "point_game_box_mean": 0.865,
+  "point_game_box_standard_error": 0.024163505540380516,
+  "point_game_mask_mean": 0.725,
+  "point_game_mask_standard_error": 0.031573327350787724,
+  "excluded_by": "50 lowest mask_pixels; ties broken by image_id",
+  "source_per_image_csv": "ours/results/ours_mask_tail_250_old_prompt/evaluation_patch8/point_game_per_image_linear.csv",
+  "filtered_per_image_csv": "reports/pg_linear_drop50_smallest_masks/our_method_(old_prompt,_linear)_point_game_per_image.csv"
+}

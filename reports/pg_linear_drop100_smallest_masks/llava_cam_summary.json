@@ -1,0 +1,11 @@
+{
+  "method": "LLaVA-CAM",
+  "num_scored": 150,
+  "point_game_box_mean": 0.35333333333333333,
+  "point_game_box_standard_error": 0.03902895411434003,
+  "point_game_mask_mean": 0.22666666666666666,
+  "point_game_mask_standard_error": 0.03418468359649673,
+  "excluded_by": "100 lowest mask_pixels; ties broken by image_id",
+  "source_per_image_csv": "llavacam/results/mask_tail_250_portable/LLaVACAM/point_game_per_image.csv",
+  "filtered_per_image_csv": "reports/pg_linear_drop100_smallest_masks/llava_cam_point_game_per_image.csv"
+}

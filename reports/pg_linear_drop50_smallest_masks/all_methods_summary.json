@@ -1,0 +1,46 @@
+[
+  {
+    "method": "Our method (old prompt, linear)",
+    "num_scored": 200,
+    "point_game_box_mean": 0.865,
+    "point_game_box_standard_error": 0.024163505540380516,
+    "point_game_mask_mean": 0.725,
+    "point_game_mask_standard_error": 0.031573327350787724,
+    "excluded_by": "50 lowest mask_pixels; ties broken by image_id",
+    "source_per_image_csv": "ours/results/ours_mask_tail_250_old_prompt/evaluation_patch8/point_game_per_image_linear.csv",
+    "filtered_per_image_csv": "reports/pg_linear_drop50_smallest_masks/our_method_(old_prompt,_linear)_point_game_per_image.csv"
+  },
+  {
+    "method": "Input-level deletion (linear)",
+    "num_scored": 200,
+    "point_game_box_mean": 0.875,
+    "point_game_box_standard_error": 0.023385358667337135,
+    "point_game_mask_mean": 0.74,
+    "point_game_mask_standard_error": 0.031016124838541645,
+    "excluded_by": "50 lowest mask_pixels; ties broken by image_id",
+    "source_per_image_csv": "input_deletion/results/input_deletion_mask_tail_250/evaluation_patch8/point_game_per_image_linear.csv",
+    "filtered_per_image_csv": "reports/pg_linear_drop50_smallest_masks/input_level_deletion_(linear)_point_game_per_image.csv"
+  },
+  {
+    "method": "TAM",
+    "num_scored": 200,
+    "point_game_box_mean": 0.47,
+    "point_game_box_standard_error": 0.03529164207004259,
+    "point_game_mask_mean": 0.405,
+    "point_game_mask_standard_error": 0.0347113093962184,
+    "excluded_by": "50 lowest mask_pixels; ties broken by image_id",
+    "source_per_image_csv": "tam/results/mask_tail_250_portable/TAM/point_game_per_image.csv",
+    "filtered_per_image_csv": "reports/pg_linear_drop50_smallest_masks/tam_point_game_per_image.csv"
+  },
+  {
+    "method": "LLaVA-CAM",
+    "num_scored": 200,
+    "point_game_box_mean": 0.28,
+    "point_game_box_standard_error": 0.03174901573277509,
+    "point_game_mask_mean": 0.18,
+    "point_game_mask_standard_error": 0.027166155414412252,
+    "excluded_by": "50 lowest mask_pixels; ties broken by image_id",
+    "source_per_image_csv": "llavacam/results/mask_tail_250_portable/LLaVACAM/point_game_per_image.csv",
+    "filtered_per_image_csv": "reports/pg_linear_drop50_smallest_masks/llava_cam_point_game_per_image.csv"
+  }
+]

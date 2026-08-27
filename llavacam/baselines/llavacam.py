@@ -162,10 +162,14 @@ class LLaVACAM(object):
                     ],},
                 ]
             # Preparation for inference
-            inputs = self.processor.apply_chat_template(info, add_generation_prompt=True, tokenize=True, return_dict=True, return_tensors="pt").to(self.model.device, dtype=torch.bfloat16)
-            self.generated_ids = self.generated_ids[:max(self.target_token_position)]   #bug
+            model_dtype = next(self.model.parameters()).dtype
+            inputs = self.processor.apply_chat_template(info, add_generation_prompt=True, tokenize=True, return_dict=True, return_tensors="pt").to(self.model.device, dtype=model_dtype)
+            inputs["pixel_values"].requires_grad_(True)
+            self.generated_ids = self.generated_ids[:, :int(max(self.target_token_position))]
             inputs['input_ids'] = self.generated_ids
             inputs['attention_mask'] = torch.ones_like(self.generated_ids)
+            for stale_key in ("position_ids", "cache_position", "rope_deltas"):
+                inputs.pop(stale_key, None)
             inputs = inputs.to(self.model.device)    # dict_keys(['input_ids', 'attention_mask', 'pixel_values', 'image_grid_thw'])
             
             vision_mask = (inputs["input_ids"] == self.model.config.image_token_id).to(self.model.device)

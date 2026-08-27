@@ -23,14 +23,18 @@ SUMMARY_CSV = ROOT / "reports" / "previews" / "mask_tail_250_metrics_summary.csv
 MANIFEST = ROOT / "shared" / "coco_mask_tail_250_benchmark.json"
 GPU_COUNT = 4
 SENSITIVITY_THRESHOLD = 0.4
+OURS_PROMPT = (
+    "Is there a <object> in the image or not? "
+    "Answer with exactly one word: yes or no."
+)
 
 # These anchors were captured from the completed jobs before model loading.  The
 # end is recovered from the newest per-image JSON, so CPU-only aggregation is
 # excluded.  See the runtime page in the report for the exact definition.
 METHODS = {
     "Ours": {
-        "directory": ROOT / "ours/results/ours_mask_tail_250_v2/evaluation_patch8",
-        "start_epoch": 1787603853.383058288,
+        "directory": ROOT / "ours/results/ours_mask_tail_250_old_prompt/evaluation_patch8",
+        "start_epoch": 1787653807.186558299,
         "protocol": "patch / white baseline / 8 patches per step",
         "color": "#2E8B57",
     },
@@ -355,7 +359,7 @@ def add_protocol(pdf: PdfPages, results: dict):
     style_table(table, font_size=8.1)
     notes = [
         "All methods use the same audited COCO val2017 mask-tail-250 manifest and Qwen2.5-VL-7B-Instruct model.",
-        "Ours and Input-level score summed yes-token probability. TAM and LLaVA-CAM use the audited COCO-caption target token. These target definitions should be considered when comparing absolute AUCs.",
+        f"Our method used this exact prompt: ‘{OURS_PROMPT}’ It scores summed yes-token probability. TAM and LLaVA-CAM use the audited COCO-caption target token; these target definitions should be considered when comparing absolute AUCs.",
         "Ours and Input-level evaluate merged vision patches and change 8 patches per regular step. TAM and LLaVA-CAM evaluate dense heatmaps with 64 equal pixel-fraction steps.",
         "Runtime begins at the recorded pre-load job anchor and ends at the final per-image evaluation JSON timestamp. All four completed evaluation jobs used four GPUs.",
         "Attribution generation time is not included in the runtime column because an exact uniform start anchor is unavailable for every method.",
@@ -364,7 +368,7 @@ def add_protocol(pdf: PdfPages, results: dict):
     y = 0.53
     for note in notes:
         ax.text(0.045, y, "• " + note, fontsize=9.5, va="top", wrap=True)
-        y -= 0.078
+        y -= 0.070
     ax.text(0.025, 0.05, f"Manifest: {MANIFEST.relative_to(ROOT)}", fontsize=8.5, family="monospace")
     ax.text(
         0.025,
