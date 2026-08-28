@@ -10,9 +10,9 @@ this matrix. The checkpoints are `Qwen/Qwen2.5-VL-7B-Instruct` and
 | Model | Dataset | Ours | Input-level | EAGLE | TAM | LLaVA-CAM |
 |---|---|---:|---:|---:|---:|---:|
 | Qwen2.5-VL-7B | COCO-250 | completed | completed | completed | completed | completed |
-| Qwen2.5-VL-7B | MMVP forced-choice-150 | runnable | not implemented | not implemented | not implemented | not implemented |
+| Qwen2.5-VL-7B | MMVP forced-choice-150 | runnable | runnable | runnable | runnable | runnable |
 | InternVL3.5-8B-HF | COCO-250 | empty for later | not implemented | runnable | runnable | runnable |
-| InternVL3.5-8B-HF | MMVP forced-choice-150 | empty for later | not implemented | not implemented | not implemented | not implemented |
+| InternVL3.5-8B-HF | MMVP forced-choice-150 | empty for later | not implemented | runnable | runnable | runnable |
 
 “Runnable” means attribution and faithfulness evaluation launchers exist.
 “Completed” means final numbers are tracked in `benchmark/results.json`, so the
@@ -22,9 +22,7 @@ the old free-form MMVP protocol to the new forced-choice subset.
 
 Our method on InternVL is intentionally empty, as requested. The audit also
 found that the input-level method has no InternVL implementation; that second
-gap is recorded rather than hidden. InternVL EAGLE/TAM/LLaVA-CAM currently use
-the COCO caption-target pipeline only. Their forced-choice MMVP-150 adapters
-remain future work.
+gap is recorded rather than hidden. InternVL EAGLE/TAM/LLaVA-CAM support both the COCO caption-target pipeline and the shared forced-choice MMVP-150 answer-token protocol.
 
 ## Canonical data protocols
 
@@ -104,15 +102,17 @@ Example forced rerun:
 
 ### Qwen/MMVP forced-choice-150
 
-Only our method is currently implemented for this new protocol:
+All five Qwen methods use the same frozen exact-option prediction and answer-token targets:
 
 ```bash
-./scripts/run_experiment.sh \
-  --method ours --dataset mmvp --model qwen \
-  --data-dir "/datasets/MMVP/MMVP Images" \
-  --model-path /models/Qwen2.5-VL-7B-Instruct \
-  --output-dir /experiments/qwen/mmvp/ours \
-  --num-gpus 4 --stage all
+for method in ours input_level eagle tam llavacam; do
+  ./scripts/run_experiment.sh \
+    --method "$method" --dataset mmvp --model qwen \
+    --data-dir "/datasets/MMVP/MMVP Images" \
+    --model-path /models/Qwen2.5-VL-7B-Instruct \
+    --output-dir "/experiments/qwen/mmvp/$method" \
+    --num-gpus 4 --stage all
+done
 ```
 
 ### InternVL/COCO-250 baselines

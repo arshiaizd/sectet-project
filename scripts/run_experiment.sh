@@ -97,8 +97,9 @@ run_attribution() {
       tam) "$SCRIPT_DIR/run_tam_250.sh" "$data_dir" "$model_path" "$output_dir/attribution" ;;
       llavacam) "$SCRIPT_DIR/run_llavacam_250.sh" "$data_dir" "$model_path" "$output_dir/attribution" ;;
     esac
-  elif [[ "$model.$dataset.$method" == qwen.mmvp.ours ]]; then
-    "$SCRIPT_DIR/run_qwen_mmvp_ours_150.sh" "$data_dir" "$model_path" "$output_dir/attribution"
+  elif [[ "$dataset" == mmvp ]]; then
+    "$SCRIPT_DIR/run_mmvp_150.sh" "$method" "$model" "$data_dir" \
+      "$model_path" "$output_dir/attribution"
   elif [[ "$model.$dataset" == internvl.coco ]]; then
     "$SCRIPT_DIR/run_internvl_baseline_250.sh" "$method" "$data_dir" "$model_path" "$output_dir/attribution"
   else
@@ -121,9 +122,9 @@ run_evaluation() {
           "$model_path" "$output_dir/attribution"
         ;;
     esac
-  elif [[ "$model.$dataset.$method" == qwen.mmvp.ours ]]; then
-    "$SCRIPT_DIR/evaluate_qwen_mmvp_ours_150.sh" "$data_dir" "$model_path" \
-      "$output_dir/attribution" "$output_dir/evaluation"
+  elif [[ "$dataset" == mmvp ]]; then
+    "$SCRIPT_DIR/evaluate_mmvp_150.sh" "$method" "$model" "$data_dir" \
+      "$model_path" "$output_dir/attribution" "$output_dir/evaluation"
   elif [[ "$model.$dataset" == internvl.coco ]]; then
     "$SCRIPT_DIR/evaluate_internvl_baseline_250.sh" "$method" "$data_dir" \
       "$model_path" "$output_dir/attribution"

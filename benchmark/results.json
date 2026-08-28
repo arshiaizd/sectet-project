@@ -19,7 +19,8 @@
   },
   "metric_protocol": {
     "faithfulness": "Insertion/deletion AUC; patch methods change 8 merged patches per step and dense methods use 64 equal-fraction steps",
-    "sensitivity_threshold": 0.4,
+    "coco_sensitivity_threshold": 0.4,
+    "mmvp_sensitivity_threshold": 0.2,
     "coco_pointing_game": "shared/eval_point_game_coco.py with pg_criterion=centroid; patch_mode=centroid for patch methods",
     "mmvp_pointing_game": null
   },
@@ -113,24 +114,24 @@
       "notes": "Forced-choice MMVP-150 adapter is ready; this protocol needs a fresh run."
     },
     "qwen.mmvp.input_level": {
-      "status": "not_implemented",
-      "runner_available": false,
-      "notes": "The input-level code currently implements the COCO yes/no protocol only."
+      "status": "runnable_no_result",
+      "runner_available": true,
+      "notes": "Uses the shared frozen Qwen exact-option prediction and averages teacher-forced probability across all predicted answer tokens."
     },
     "qwen.mmvp.eagle": {
-      "status": "not_implemented",
-      "runner_available": false,
-      "notes": "The repository contains a legacy free-form MMVP-300 EAGLE runner, not a forced-choice MMVP-150 adapter."
+      "status": "runnable_no_result",
+      "runner_available": true,
+      "notes": "Uses the shared frozen exact-option answer; EAGLE averages its per-token probabilities."
     },
     "qwen.mmvp.tam": {
-      "status": "not_implemented",
-      "runner_available": false,
-      "notes": "No forced-choice MMVP-150 TAM adapter exists yet."
+      "status": "runnable_no_result",
+      "runner_available": true,
+      "notes": "Generates one TAM map for every predicted answer token and averages the maps."
     },
     "qwen.mmvp.llavacam": {
-      "status": "not_implemented",
-      "runner_available": false,
-      "notes": "No forced-choice MMVP-150 LLaVA-CAM adapter exists yet."
+      "status": "runnable_no_result",
+      "runner_available": true,
+      "notes": "Backpropagates the joint score of all tokens in the shared frozen exact-option answer."
     },
     "internvl.coco.ours": {
       "status": "empty_for_later",
@@ -168,19 +169,19 @@
       "notes": "Neither an InternVL input-level port nor a forced-choice MMVP adapter exists."
     },
     "internvl.mmvp.eagle": {
-      "status": "not_implemented",
-      "runner_available": false,
-      "notes": "InternVL EAGLE currently supports the COCO caption-target protocol only."
+      "status": "runnable_no_result",
+      "runner_available": true,
+      "notes": "InternVL EAGLE uses the same exact-option prompt and all predicted answer tokens."
     },
     "internvl.mmvp.tam": {
-      "status": "not_implemented",
-      "runner_available": false,
-      "notes": "InternVL TAM currently supports the COCO caption-target protocol only."
+      "status": "runnable_no_result",
+      "runner_available": true,
+      "notes": "InternVL TAM averages one map per predicted exact-option answer token."
     },
     "internvl.mmvp.llavacam": {
-      "status": "not_implemented",
-      "runner_available": false,
-      "notes": "InternVL LLaVA-CAM currently supports the COCO caption-target protocol only."
+      "status": "runnable_no_result",
+      "runner_available": true,
+      "notes": "InternVL LLaVA-CAM targets the joint score of all predicted exact-option answer tokens."
     }
   },
   "legacy_results_not_comparable": {
