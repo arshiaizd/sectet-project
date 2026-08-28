@@ -1,0 +1,3752 @@
+[
+  {
+    "dataset_sample_index": 0,
+    "mmvp_pair_index": 0,
+    "source_question_id": "2",
+    "source_partner_question_id": "1",
+    "image_filename": "2.jpg",
+    "partner_image_filename": "1.jpg",
+    "question": "Are the butterfly's wings closer to being open or closed?",
+    "options": [
+      "Open",
+      "Closed"
+    ],
+    "allowed_outputs": [
+      "Open",
+      "Closed"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Closed",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Are the butterfly's wings closer to being open or closed?\n\nOptions:\nA. Open\nB. Closed\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 1,
+    "mmvp_pair_index": 1,
+    "source_question_id": "4",
+    "source_partner_question_id": "3",
+    "image_filename": "4.jpg",
+    "partner_image_filename": "3.jpg",
+    "question": "Is the flame of the match more round or thin?",
+    "options": [
+      "Round",
+      "Thin"
+    ],
+    "allowed_outputs": [
+      "Round",
+      "Thin"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Thin",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the flame of the match more round or thin?\n\nOptions:\nA. Round\nB. Thin\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 2,
+    "mmvp_pair_index": 2,
+    "source_question_id": "5",
+    "source_partner_question_id": "6",
+    "image_filename": "5.jpg",
+    "partner_image_filename": "6.jpg",
+    "question": "Is the dog facing left or right from the camera's perspective?",
+    "options": [
+      "Left",
+      "Right"
+    ],
+    "allowed_outputs": [
+      "Left",
+      "Right"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Left",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the dog facing left or right from the camera's perspective?\n\nOptions:\nA. Left\nB. Right\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 3,
+    "mmvp_pair_index": 3,
+    "source_question_id": "7",
+    "source_partner_question_id": "8",
+    "image_filename": "7.jpg",
+    "partner_image_filename": "8.jpg",
+    "question": "Is the school bus driving towards or away from the camera?",
+    "options": [
+      "Towards the camera",
+      "Away from the camera"
+    ],
+    "allowed_outputs": [
+      "Towards the camera",
+      "Away from the camera"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Towards the camera",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the school bus driving towards or away from the camera?\n\nOptions:\nA. Towards the camera\nB. Away from the camera\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 4,
+    "mmvp_pair_index": 4,
+    "source_question_id": "9",
+    "source_partner_question_id": "10",
+    "image_filename": "9.jpg",
+    "partner_image_filename": "10.jpg",
+    "question": "Can you see the key \"Z\" in the image?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Can you see the key \"Z\" in the image?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 5,
+    "mmvp_pair_index": 5,
+    "source_question_id": "12",
+    "source_partner_question_id": "11",
+    "image_filename": "12.jpg",
+    "partner_image_filename": "11.jpg",
+    "question": "Has the peacock opened its tail?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Has the peacock opened its tail?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 6,
+    "mmvp_pair_index": 6,
+    "source_question_id": "13",
+    "source_partner_question_id": "14",
+    "image_filename": "13.jpg",
+    "partner_image_filename": "14.jpg",
+    "question": "Is the image more likely of a single ear of corn or multiple ears",
+    "options": [
+      "Single",
+      "Multiple"
+    ],
+    "allowed_outputs": [
+      "Single",
+      "Multiple"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Single",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the image more likely of a single ear of corn or multiple ears\n\nOptions:\nA. Single\nB. Multiple\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 7,
+    "mmvp_pair_index": 7,
+    "source_question_id": "15",
+    "source_partner_question_id": "16",
+    "image_filename": "15.jpg",
+    "partner_image_filename": "16.jpg",
+    "question": "Is there a shadow on the flower?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is there a shadow on the flower?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 8,
+    "mmvp_pair_index": 8,
+    "source_question_id": "18",
+    "source_partner_question_id": "17",
+    "image_filename": "18.jpg",
+    "partner_image_filename": "17.jpg",
+    "question": "Is the front of the school bus protruding?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the front of the school bus protruding?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 9,
+    "mmvp_pair_index": 9,
+    "source_question_id": "20",
+    "source_partner_question_id": "19",
+    "image_filename": "20.jpg",
+    "partner_image_filename": "19.jpg",
+    "question": "Can you see the dorsal fin of the animal?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Can you see the dorsal fin of the animal?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 10,
+    "mmvp_pair_index": 10,
+    "source_question_id": "22",
+    "source_partner_question_id": "21",
+    "image_filename": "22.jpg",
+    "partner_image_filename": "21.jpg",
+    "question": "Is the duck's entire beak visible in the picture?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the duck's entire beak visible in the picture?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 11,
+    "mmvp_pair_index": 11,
+    "source_question_id": "23",
+    "source_partner_question_id": "24",
+    "image_filename": "23.jpg",
+    "partner_image_filename": "24.jpg",
+    "question": "From which angle is this image taken?",
+    "options": [
+      "Front",
+      "Side"
+    ],
+    "allowed_outputs": [
+      "Front",
+      "Side"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Front",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: From which angle is this image taken?\n\nOptions:\nA. Front\nB. Side\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 12,
+    "mmvp_pair_index": 12,
+    "source_question_id": "26",
+    "source_partner_question_id": "25",
+    "image_filename": "26.jpg",
+    "partner_image_filename": "25.jpg",
+    "question": "What color is the chicken's body?",
+    "options": [
+      "Black",
+      "Red"
+    ],
+    "allowed_outputs": [
+      "Black",
+      "Red"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Red",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: What color is the chicken's body?\n\nOptions:\nA. Black\nB. Red\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 13,
+    "mmvp_pair_index": 13,
+    "source_question_id": "27",
+    "source_partner_question_id": "28",
+    "image_filename": "27.jpg",
+    "partner_image_filename": "28.jpg",
+    "question": "Is the peacock's head visible in the image?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the peacock's head visible in the image?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 14,
+    "mmvp_pair_index": 14,
+    "source_question_id": "29",
+    "source_partner_question_id": "30",
+    "image_filename": "29.jpg",
+    "partner_image_filename": "30.jpg",
+    "question": "Based on the image, is the following statement correct: We cannot see the window on the school bus?",
+    "options": [
+      "Correct",
+      "Incorrect"
+    ],
+    "allowed_outputs": [
+      "Correct",
+      "Incorrect"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Correct",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Based on the image, is the following statement correct: We cannot see the window on the school bus?\n\nOptions:\nA. Correct\nB. Incorrect\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 15,
+    "mmvp_pair_index": 15,
+    "source_question_id": "32",
+    "source_partner_question_id": "31",
+    "image_filename": "32.jpg",
+    "partner_image_filename": "31.jpg",
+    "question": "Is the wind blowing the flag?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the wind blowing the flag?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 16,
+    "mmvp_pair_index": 16,
+    "source_question_id": "33",
+    "source_partner_question_id": "34",
+    "image_filename": "33.jpg",
+    "partner_image_filename": "34.jpg",
+    "question": "Is the butterfly's abdomen visible in the image?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the butterfly's abdomen visible in the image?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 17,
+    "mmvp_pair_index": 17,
+    "source_question_id": "35",
+    "source_partner_question_id": "36",
+    "image_filename": "35.jpg",
+    "partner_image_filename": "36.jpg",
+    "question": "Do the vegetables have spikes?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Do the vegetables have spikes?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 18,
+    "mmvp_pair_index": 18,
+    "source_question_id": "37",
+    "source_partner_question_id": "38",
+    "image_filename": "37.jpg",
+    "partner_image_filename": "38.jpg",
+    "question": "What color are the flowers in the background?",
+    "options": [
+      "Pink",
+      "Violet"
+    ],
+    "allowed_outputs": [
+      "Pink",
+      "Violet"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Pink",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: What color are the flowers in the background?\n\nOptions:\nA. Pink\nB. Violet\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 19,
+    "mmvp_pair_index": 19,
+    "source_question_id": "40",
+    "source_partner_question_id": "39",
+    "image_filename": "40.jpg",
+    "partner_image_filename": "39.jpg",
+    "question": "Is the duck floating?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the duck floating?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 20,
+    "mmvp_pair_index": 20,
+    "source_question_id": "42",
+    "source_partner_question_id": "41",
+    "image_filename": "42.jpg",
+    "partner_image_filename": "41.jpg",
+    "question": "Based on the image, is the following statement correct: The spider has 8 legs?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Based on the image, is the following statement correct: The spider has 8 legs?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 21,
+    "mmvp_pair_index": 21,
+    "source_question_id": "44",
+    "source_partner_question_id": "43",
+    "image_filename": "44.jpg",
+    "partner_image_filename": "43.jpg",
+    "question": "Are the wheels of the school bus visible in the image?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Are the wheels of the school bus visible in the image?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 22,
+    "mmvp_pair_index": 22,
+    "source_question_id": "45",
+    "source_partner_question_id": "46",
+    "image_filename": "45.jpg",
+    "partner_image_filename": "46.jpg",
+    "question": "Is the shark's belly visible in this image?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the shark's belly visible in this image?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 23,
+    "mmvp_pair_index": 23,
+    "source_question_id": "48",
+    "source_partner_question_id": "47",
+    "image_filename": "48.jpg",
+    "partner_image_filename": "47.jpg",
+    "question": "How many spots are on the animal in the image?",
+    "options": [
+      "5",
+      "6"
+    ],
+    "allowed_outputs": [
+      "5",
+      "6"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "6",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: How many spots are on the animal in the image?\n\nOptions:\nA. 5\nB. 6\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 24,
+    "mmvp_pair_index": 24,
+    "source_question_id": "50",
+    "source_partner_question_id": "49",
+    "image_filename": "50.jpg",
+    "partner_image_filename": "49.jpg",
+    "question": "Are the arrow keys visible in the image?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Are the arrow keys visible in the image?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 25,
+    "mmvp_pair_index": 25,
+    "source_question_id": "51",
+    "source_partner_question_id": "52",
+    "image_filename": "51.jpg",
+    "partner_image_filename": "52.jpg",
+    "question": "Is the elephant's trunk curled in the picture?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the elephant's trunk curled in the picture?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 26,
+    "mmvp_pair_index": 26,
+    "source_question_id": "54",
+    "source_partner_question_id": "53",
+    "image_filename": "54.jpg",
+    "partner_image_filename": "53.jpg",
+    "question": "Is the number of pills in the image in the range of countable?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the number of pills in the image in the range of countable?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 27,
+    "mmvp_pair_index": 27,
+    "source_question_id": "55",
+    "source_partner_question_id": "56",
+    "image_filename": "55.jpg",
+    "partner_image_filename": "56.jpg",
+    "question": "Can you see stems of bananas in the image?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Can you see stems of bananas in the image?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 28,
+    "mmvp_pair_index": 28,
+    "source_question_id": "58",
+    "source_partner_question_id": "57",
+    "image_filename": "58.jpg",
+    "partner_image_filename": "57.jpg",
+    "question": "Is the crocodile submerged in the water?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the crocodile submerged in the water?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 29,
+    "mmvp_pair_index": 29,
+    "source_question_id": "59",
+    "source_partner_question_id": "60",
+    "image_filename": "59.jpg",
+    "partner_image_filename": "60.jpg",
+    "question": "Is the lock locked to the chain-linked fence?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the lock locked to the chain-linked fence?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 30,
+    "mmvp_pair_index": 30,
+    "source_question_id": "61",
+    "source_partner_question_id": "62",
+    "image_filename": "61.jpg",
+    "partner_image_filename": "62.jpg",
+    "question": "Can you see letter \"J\" in the image?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Can you see letter \"J\" in the image?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 31,
+    "mmvp_pair_index": 31,
+    "source_question_id": "64",
+    "source_partner_question_id": "63",
+    "image_filename": "64.jpg",
+    "partner_image_filename": "63.jpg",
+    "question": "Is the following statement correct: In the image, there is one daisy that is under the shadow of a taller daisy.",
+    "options": [
+      "Correct",
+      "Incorrect"
+    ],
+    "allowed_outputs": [
+      "Correct",
+      "Incorrect"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Incorrect",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the following statement correct: In the image, there is one daisy that is under the shadow of a taller daisy.\n\nOptions:\nA. Correct\nB. Incorrect\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 32,
+    "mmvp_pair_index": 32,
+    "source_question_id": "66",
+    "source_partner_question_id": "65",
+    "image_filename": "66.jpg",
+    "partner_image_filename": "65.jpg",
+    "question": "Is the following statement correct: There is no letter D on this image.",
+    "options": [
+      "Correct",
+      "Incorrect"
+    ],
+    "allowed_outputs": [
+      "Correct",
+      "Incorrect"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Incorrect",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the following statement correct: There is no letter D on this image.\n\nOptions:\nA. Correct\nB. Incorrect\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 33,
+    "mmvp_pair_index": 33,
+    "source_question_id": "67",
+    "source_partner_question_id": "68",
+    "image_filename": "67.jpg",
+    "partner_image_filename": "68.jpg",
+    "question": "Are there any clouds?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Are there any clouds?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 34,
+    "mmvp_pair_index": 34,
+    "source_question_id": "70",
+    "source_partner_question_id": "69",
+    "image_filename": "70.jpg",
+    "partner_image_filename": "69.jpg",
+    "question": "Did the snake stick out its tongue and touch its skin?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Did the snake stick out its tongue and touch its skin?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 35,
+    "mmvp_pair_index": 35,
+    "source_question_id": "72",
+    "source_partner_question_id": "71",
+    "image_filename": "72.jpg",
+    "partner_image_filename": "71.jpg",
+    "question": "Is the lock locked or unlocked?",
+    "options": [
+      "Locked",
+      "Unlocked"
+    ],
+    "allowed_outputs": [
+      "Locked",
+      "Unlocked"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Unlocked",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the lock locked or unlocked?\n\nOptions:\nA. Locked\nB. Unlocked\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 36,
+    "mmvp_pair_index": 36,
+    "source_question_id": "74",
+    "source_partner_question_id": "73",
+    "image_filename": "74.jpg",
+    "partner_image_filename": "73.jpg",
+    "question": "Is the ground wet?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the ground wet?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 37,
+    "mmvp_pair_index": 37,
+    "source_question_id": "75",
+    "source_partner_question_id": "76",
+    "image_filename": "75.jpg",
+    "partner_image_filename": "76.jpg",
+    "question": "Do you see this flower from the top or the side?",
+    "options": [
+      "Top",
+      "Side"
+    ],
+    "allowed_outputs": [
+      "Top",
+      "Side"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Top",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Do you see this flower from the top or the side?\n\nOptions:\nA. Top\nB. Side\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 38,
+    "mmvp_pair_index": 38,
+    "source_question_id": "77",
+    "source_partner_question_id": "78",
+    "image_filename": "77.jpg",
+    "partner_image_filename": "78.jpg",
+    "question": "Can you see the caudal fin of the shark in the image?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Can you see the caudal fin of the shark in the image?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 39,
+    "mmvp_pair_index": 39,
+    "source_question_id": "79",
+    "source_partner_question_id": "80",
+    "image_filename": "79.jpg",
+    "partner_image_filename": "80.jpg",
+    "question": "In the image, is the snake's head oriented facing upwards or directed forwards?",
+    "options": [
+      "Upwards",
+      "Forward"
+    ],
+    "allowed_outputs": [
+      "Upwards",
+      "Forward"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Upwards",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: In the image, is the snake's head oriented facing upwards or directed forwards?\n\nOptions:\nA. Upwards\nB. Forward\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 40,
+    "mmvp_pair_index": 40,
+    "source_question_id": "81",
+    "source_partner_question_id": "82",
+    "image_filename": "81.jpg",
+    "partner_image_filename": "82.jpg",
+    "question": "Is this a hammerhead shark?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is this a hammerhead shark?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 41,
+    "mmvp_pair_index": 41,
+    "source_question_id": "83",
+    "source_partner_question_id": "84",
+    "image_filename": "83.jpg",
+    "partner_image_filename": "84.jpg",
+    "question": "Is the door of the truck cab open?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the door of the truck cab open?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 42,
+    "mmvp_pair_index": 42,
+    "source_question_id": "85",
+    "source_partner_question_id": "86",
+    "image_filename": "85.jpg",
+    "partner_image_filename": "86.jpg",
+    "question": "Are the ears of the dog erect or drooping?",
+    "options": [
+      "Erect",
+      "Drooping"
+    ],
+    "allowed_outputs": [
+      "Erect",
+      "Drooping"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Erect",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Are the ears of the dog erect or drooping?\n\nOptions:\nA. Erect\nB. Drooping\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 43,
+    "mmvp_pair_index": 43,
+    "source_question_id": "88",
+    "source_partner_question_id": "87",
+    "image_filename": "88.jpg",
+    "partner_image_filename": "87.jpg",
+    "question": "Is there a hand using the mouse in the image?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is there a hand using the mouse in the image?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 44,
+    "mmvp_pair_index": 44,
+    "source_question_id": "90",
+    "source_partner_question_id": "89",
+    "image_filename": "90.jpg",
+    "partner_image_filename": "89.jpg",
+    "question": "Can you see people in this image?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Can you see people in this image?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 45,
+    "mmvp_pair_index": 45,
+    "source_question_id": "92",
+    "source_partner_question_id": "91",
+    "image_filename": "92.jpg",
+    "partner_image_filename": "91.jpg",
+    "question": "Are there any words displayed on the vehicle's lightbar?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Are there any words displayed on the vehicle's lightbar?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 46,
+    "mmvp_pair_index": 46,
+    "source_question_id": "93",
+    "source_partner_question_id": "94",
+    "image_filename": "93.jpg",
+    "partner_image_filename": "94.jpg",
+    "question": "Is there any accessory on the wrists?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is there any accessory on the wrists?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 47,
+    "mmvp_pair_index": 47,
+    "source_question_id": "96",
+    "source_partner_question_id": "95",
+    "image_filename": "96.jpg",
+    "partner_image_filename": "95.jpg",
+    "question": "From the camera's perspective, is the spider web very dense or relatively sparse?",
+    "options": [
+      "Very dense",
+      "Relatively sparse"
+    ],
+    "allowed_outputs": [
+      "Very dense",
+      "Relatively sparse"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Relatively sparse",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: From the camera's perspective, is the spider web very dense or relatively sparse?\n\nOptions:\nA. Very dense\nB. Relatively sparse\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 48,
+    "mmvp_pair_index": 48,
+    "source_question_id": "97",
+    "source_partner_question_id": "98",
+    "image_filename": "97.jpg",
+    "partner_image_filename": "98.jpg",
+    "question": "Does the keyboard have a backlight?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Does the keyboard have a backlight?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 49,
+    "mmvp_pair_index": 49,
+    "source_question_id": "100",
+    "source_partner_question_id": "99",
+    "image_filename": "100.jpg",
+    "partner_image_filename": "99.jpg",
+    "question": "Does the elephant have long or short tusks?",
+    "options": [
+      "Long",
+      "Short"
+    ],
+    "allowed_outputs": [
+      "Long",
+      "Short"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Short",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Does the elephant have long or short tusks?\n\nOptions:\nA. Long\nB. Short\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 50,
+    "mmvp_pair_index": 50,
+    "source_question_id": "102",
+    "source_partner_question_id": "101",
+    "image_filename": "102.jpg",
+    "partner_image_filename": "101.jpg",
+    "question": "What is the woman more likely to do?",
+    "options": [
+      "Bump",
+      "Set"
+    ],
+    "allowed_outputs": [
+      "Bump",
+      "Set"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Set",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: What is the woman more likely to do?\n\nOptions:\nA. Bump\nB. Set\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 51,
+    "mmvp_pair_index": 51,
+    "source_question_id": "104",
+    "source_partner_question_id": "103",
+    "image_filename": "104.jpg",
+    "partner_image_filename": "103.jpg",
+    "question": "Is the needle pointing up or down?",
+    "options": [
+      "Up",
+      "Down"
+    ],
+    "allowed_outputs": [
+      "Up",
+      "Down"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Down",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the needle pointing up or down?\n\nOptions:\nA. Up\nB. Down\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 52,
+    "mmvp_pair_index": 52,
+    "source_question_id": "106",
+    "source_partner_question_id": "105",
+    "image_filename": "106.jpg",
+    "partner_image_filename": "105.jpg",
+    "question": "Is the camera positioned at eye level or looking down from above?",
+    "options": [
+      "Eye level",
+      "Above"
+    ],
+    "allowed_outputs": [
+      "Eye level",
+      "Above"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Above",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the camera positioned at eye level or looking down from above?\n\nOptions:\nA. Eye level\nB. Above\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 53,
+    "mmvp_pair_index": 53,
+    "source_question_id": "107",
+    "source_partner_question_id": "108",
+    "image_filename": "107.jpg",
+    "partner_image_filename": "108.jpg",
+    "question": "Are the butterfly's feet visible?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Are the butterfly's feet visible?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 54,
+    "mmvp_pair_index": 54,
+    "source_question_id": "110",
+    "source_partner_question_id": "109",
+    "image_filename": "110.jpg",
+    "partner_image_filename": "109.jpg",
+    "question": "Are the bird's wings flapping upward or downward?",
+    "options": [
+      "Upward",
+      "Downward"
+    ],
+    "allowed_outputs": [
+      "Upward",
+      "Downward"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Downward",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Are the bird's wings flapping upward or downward?\n\nOptions:\nA. Upward\nB. Downward\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 55,
+    "mmvp_pair_index": 55,
+    "source_question_id": "111",
+    "source_partner_question_id": "112",
+    "image_filename": "111.jpg",
+    "partner_image_filename": "112.jpg",
+    "question": "Is the end of the elephant's trunk pointing inward or outward?",
+    "options": [
+      "Inward",
+      "Outward"
+    ],
+    "allowed_outputs": [
+      "Inward",
+      "Outward"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Inward",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the end of the elephant's trunk pointing inward or outward?\n\nOptions:\nA. Inward\nB. Outward\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 56,
+    "mmvp_pair_index": 56,
+    "source_question_id": "113",
+    "source_partner_question_id": "114",
+    "image_filename": "113.jpg",
+    "partner_image_filename": "114.jpg",
+    "question": "Do you see any window in this image?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Do you see any window in this image?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 57,
+    "mmvp_pair_index": 57,
+    "source_question_id": "116",
+    "source_partner_question_id": "115",
+    "image_filename": "116.jpg",
+    "partner_image_filename": "115.jpg",
+    "question": "Is the snail in the picture facing the camera or away from the camera?",
+    "options": [
+      "Away from the camera",
+      "Facing the camera"
+    ],
+    "allowed_outputs": [
+      "Away from the camera",
+      "Facing the camera"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Facing the camera",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the snail in the picture facing the camera or away from the camera?\n\nOptions:\nA. Away from the camera\nB. Facing the camera\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 58,
+    "mmvp_pair_index": 58,
+    "source_question_id": "117",
+    "source_partner_question_id": "118",
+    "image_filename": "117.jpg",
+    "partner_image_filename": "118.jpg",
+    "question": "How many eyes of the cat can you see in the picture?",
+    "options": [
+      "1",
+      "2"
+    ],
+    "allowed_outputs": [
+      "1",
+      "2"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "1",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: How many eyes of the cat can you see in the picture?\n\nOptions:\nA. 1\nB. 2\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 59,
+    "mmvp_pair_index": 59,
+    "source_question_id": "119",
+    "source_partner_question_id": "120",
+    "image_filename": "119.jpg",
+    "partner_image_filename": "120.jpg",
+    "question": "In this image, how many eyes can you see on the animal?",
+    "options": [
+      "1",
+      "2"
+    ],
+    "allowed_outputs": [
+      "1",
+      "2"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "1",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: In this image, how many eyes can you see on the animal?\n\nOptions:\nA. 1\nB. 2\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 60,
+    "mmvp_pair_index": 60,
+    "source_question_id": "122",
+    "source_partner_question_id": "121",
+    "image_filename": "122.jpg",
+    "partner_image_filename": "121.jpg",
+    "question": "Does this corn have white kernels?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Does this corn have white kernels?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 61,
+    "mmvp_pair_index": 61,
+    "source_question_id": "123",
+    "source_partner_question_id": "124",
+    "image_filename": "123.jpg",
+    "partner_image_filename": "124.jpg",
+    "question": "Is this duck facing left or right from the camera's perspective?",
+    "options": [
+      "Left",
+      "Right"
+    ],
+    "allowed_outputs": [
+      "Left",
+      "Right"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Left",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is this duck facing left or right from the camera's perspective?\n\nOptions:\nA. Left\nB. Right\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 62,
+    "mmvp_pair_index": 62,
+    "source_question_id": "125",
+    "source_partner_question_id": "126",
+    "image_filename": "125.jpg",
+    "partner_image_filename": "126.jpg",
+    "question": "Can you see a door in this image?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Can you see a door in this image?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 63,
+    "mmvp_pair_index": 63,
+    "source_question_id": "127",
+    "source_partner_question_id": "128",
+    "image_filename": "127.jpg",
+    "partner_image_filename": "128.jpg",
+    "question": "Is the flower's center protruding or indented?",
+    "options": [
+      "Protruding",
+      "Indented"
+    ],
+    "allowed_outputs": [
+      "Protruding",
+      "Indented"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Protruding",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the flower's center protruding or indented?\n\nOptions:\nA. Protruding\nB. Indented\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 64,
+    "mmvp_pair_index": 64,
+    "source_question_id": "129",
+    "source_partner_question_id": "130",
+    "image_filename": "129.jpg",
+    "partner_image_filename": "130.jpg",
+    "question": "From the camera's perspective, are the words \"SCHOOL BUS\" in the picture facing straight or oriented at an angle?",
+    "options": [
+      "Directly towards the camera",
+      "At an angle"
+    ],
+    "allowed_outputs": [
+      "Directly towards the camera",
+      "At an angle"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Directly towards the camera",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: From the camera's perspective, are the words \"SCHOOL BUS\" in the picture facing straight or oriented at an angle?\n\nOptions:\nA. Directly towards the camera\nB. At an angle\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 65,
+    "mmvp_pair_index": 65,
+    "source_question_id": "132",
+    "source_partner_question_id": "131",
+    "image_filename": "132.jpg",
+    "partner_image_filename": "131.jpg",
+    "question": "Where is the yellow animal's head lying in this image?",
+    "options": [
+      "Floor",
+      "Carpet"
+    ],
+    "allowed_outputs": [
+      "Floor",
+      "Carpet"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Carpet",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Where is the yellow animal's head lying in this image?\n\nOptions:\nA. Floor\nB. Carpet\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 66,
+    "mmvp_pair_index": 66,
+    "source_question_id": "134",
+    "source_partner_question_id": "133",
+    "image_filename": "134.jpg",
+    "partner_image_filename": "133.jpg",
+    "question": "What does the center button say?",
+    "options": [
+      "OK/SELECT",
+      "OK"
+    ],
+    "allowed_outputs": [
+      "OK/SELECT",
+      "OK"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "OK",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: What does the center button say?\n\nOptions:\nA. OK/SELECT\nB. OK\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 67,
+    "mmvp_pair_index": 67,
+    "source_question_id": "136",
+    "source_partner_question_id": "135",
+    "image_filename": "136.jpg",
+    "partner_image_filename": "135.jpg",
+    "question": "How many cup(s) of drink are there in the image?",
+    "options": [
+      "1",
+      "2"
+    ],
+    "allowed_outputs": [
+      "1",
+      "2"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "2",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: How many cup(s) of drink are there in the image?\n\nOptions:\nA. 1\nB. 2\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 68,
+    "mmvp_pair_index": 68,
+    "source_question_id": "137",
+    "source_partner_question_id": "138",
+    "image_filename": "137.jpg",
+    "partner_image_filename": "138.jpg",
+    "question": "In the picture, how is the snake primarily positioned?",
+    "options": [
+      "Coiled",
+      "Head extended"
+    ],
+    "allowed_outputs": [
+      "Coiled",
+      "Head extended"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Coiled",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: In the picture, how is the snake primarily positioned?\n\nOptions:\nA. Coiled\nB. Head extended\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 69,
+    "mmvp_pair_index": 69,
+    "source_question_id": "139",
+    "source_partner_question_id": "140",
+    "image_filename": "139.jpg",
+    "partner_image_filename": "140.jpg",
+    "question": "Can you see the side windows of the vehicles?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Can you see the side windows of the vehicles?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 70,
+    "mmvp_pair_index": 70,
+    "source_question_id": "141",
+    "source_partner_question_id": "142",
+    "image_filename": "141.jpg",
+    "partner_image_filename": "142.jpg",
+    "question": "Is the elephant's trunk raised or lowered?",
+    "options": [
+      "Raised",
+      "Lowered"
+    ],
+    "allowed_outputs": [
+      "Raised",
+      "Lowered"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Raised",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the elephant's trunk raised or lowered?\n\nOptions:\nA. Raised\nB. Lowered\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 71,
+    "mmvp_pair_index": 71,
+    "source_question_id": "143",
+    "source_partner_question_id": "144",
+    "image_filename": "143.jpg",
+    "partner_image_filename": "144.jpg",
+    "question": "Is the ladybug positioned upright or upside down?",
+    "options": [
+      "Upright",
+      "Upside down"
+    ],
+    "allowed_outputs": [
+      "Upright",
+      "Upside down"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Upright",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the ladybug positioned upright or upside down?\n\nOptions:\nA. Upright\nB. Upside down\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 72,
+    "mmvp_pair_index": 72,
+    "source_question_id": "146",
+    "source_partner_question_id": "145",
+    "image_filename": "146.jpg",
+    "partner_image_filename": "145.jpg",
+    "question": "Is the photo taken looking down from above or looking up from below?",
+    "options": [
+      "Looking down from above",
+      "Looking up from below"
+    ],
+    "allowed_outputs": [
+      "Looking down from above",
+      "Looking up from below"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Looking up from below",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the photo taken looking down from above or looking up from below?\n\nOptions:\nA. Looking down from above\nB. Looking up from below\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 73,
+    "mmvp_pair_index": 73,
+    "source_question_id": "147",
+    "source_partner_question_id": "148",
+    "image_filename": "147.jpg",
+    "partner_image_filename": "148.jpg",
+    "question": "In the picture, is the snake's head visible or not visible?",
+    "options": [
+      "Visible",
+      "Not visible"
+    ],
+    "allowed_outputs": [
+      "Visible",
+      "Not visible"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Visible",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: In the picture, is the snake's head visible or not visible?\n\nOptions:\nA. Visible\nB. Not visible\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 74,
+    "mmvp_pair_index": 74,
+    "source_question_id": "150",
+    "source_partner_question_id": "149",
+    "image_filename": "150.jpg",
+    "partner_image_filename": "149.jpg",
+    "question": "Is the piano's back panel on the left or right side?",
+    "options": [
+      "Left",
+      "Right"
+    ],
+    "allowed_outputs": [
+      "Left",
+      "Right"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Right",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the piano's back panel on the left or right side?\n\nOptions:\nA. Left\nB. Right\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 75,
+    "mmvp_pair_index": 75,
+    "source_question_id": "151",
+    "source_partner_question_id": "152",
+    "image_filename": "151.jpg",
+    "partner_image_filename": "152.jpg",
+    "question": "The image captures a woman running from:",
+    "options": [
+      "Back view",
+      "Side view"
+    ],
+    "allowed_outputs": [
+      "Back view",
+      "Side view"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Back view",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: The image captures a woman running from:\n\nOptions:\nA. Back view\nB. Side view\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 76,
+    "mmvp_pair_index": 76,
+    "source_question_id": "154",
+    "source_partner_question_id": "153",
+    "image_filename": "154.jpg",
+    "partner_image_filename": "153.jpg",
+    "question": "How many red apples are there in the image?",
+    "options": [
+      "One",
+      "More than one"
+    ],
+    "allowed_outputs": [
+      "One",
+      "More than one"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "More than one",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: How many red apples are there in the image?\n\nOptions:\nA. One\nB. More than one\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 77,
+    "mmvp_pair_index": 77,
+    "source_question_id": "156",
+    "source_partner_question_id": "155",
+    "image_filename": "156.jpg",
+    "partner_image_filename": "155.jpg",
+    "question": "Is the vase beside the bedside table or on the windowsill?",
+    "options": [
+      "Beside the bedside Table",
+      "On the Windowsill"
+    ],
+    "allowed_outputs": [
+      "Beside the bedside Table",
+      "On the Windowsill"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "On the Windowsill",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the vase beside the bedside table or on the windowsill?\n\nOptions:\nA. Beside the bedside Table\nB. On the Windowsill\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 78,
+    "mmvp_pair_index": 78,
+    "source_question_id": "157",
+    "source_partner_question_id": "158",
+    "image_filename": "157.jpg",
+    "partner_image_filename": "158.jpg",
+    "question": "Is the frame at the front of the motorcycle primarily silver or black in color?",
+    "options": [
+      "Silver",
+      "Black"
+    ],
+    "allowed_outputs": [
+      "Silver",
+      "Black"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Silver",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the frame at the front of the motorcycle primarily silver or black in color?\n\nOptions:\nA. Silver\nB. Black\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 79,
+    "mmvp_pair_index": 79,
+    "source_question_id": "160",
+    "source_partner_question_id": "159",
+    "image_filename": "160.jpg",
+    "partner_image_filename": "159.jpg",
+    "question": "For the people operating the machine in the image, can you see one arm or both arms?",
+    "options": [
+      "One arm",
+      "Both arms"
+    ],
+    "allowed_outputs": [
+      "One arm",
+      "Both arms"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Both arms",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: For the people operating the machine in the image, can you see one arm or both arms?\n\nOptions:\nA. One arm\nB. Both arms\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 80,
+    "mmvp_pair_index": 80,
+    "source_question_id": "161",
+    "source_partner_question_id": "162",
+    "image_filename": "161.jpg",
+    "partner_image_filename": "162.jpg",
+    "question": "Is the minute hand of the clock closer to 12 or closer to 1?",
+    "options": [
+      "12",
+      "1"
+    ],
+    "allowed_outputs": [
+      "12",
+      "1"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "12",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the minute hand of the clock closer to 12 or closer to 1?\n\nOptions:\nA. 12\nB. 1\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 81,
+    "mmvp_pair_index": 81,
+    "source_question_id": "163",
+    "source_partner_question_id": "164",
+    "image_filename": "163.jpg",
+    "partner_image_filename": "164.jpg",
+    "question": "Is the Christmas tree positioned in front of a large window or in front of a wall situated between two windows?",
+    "options": [
+      "In front of a large window",
+      "In front of a wall between two windows"
+    ],
+    "allowed_outputs": [
+      "In front of a large window",
+      "In front of a wall between two windows"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "In front of a large window",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the Christmas tree positioned in front of a large window or in front of a wall situated between two windows?\n\nOptions:\nA. In front of a large window\nB. In front of a wall between two windows\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 82,
+    "mmvp_pair_index": 82,
+    "source_question_id": "165",
+    "source_partner_question_id": "166",
+    "image_filename": "165.jpg",
+    "partner_image_filename": "166.jpg",
+    "question": "In this image, are the berries placed",
+    "options": [
+      "On a dish",
+      "In bowls of yogurts"
+    ],
+    "allowed_outputs": [
+      "On a dish",
+      "In bowls of yogurts"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "On a dish",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: In this image, are the berries placed\n\nOptions:\nA. On a dish\nB. In bowls of yogurts\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 83,
+    "mmvp_pair_index": 83,
+    "source_question_id": "167",
+    "source_partner_question_id": "168",
+    "image_filename": "167.jpg",
+    "partner_image_filename": "168.jpg",
+    "question": "Are some fruits cut open or are all the fruits uncut?",
+    "options": [
+      "Some are cut open",
+      "All are uncut"
+    ],
+    "allowed_outputs": [
+      "Some are cut open",
+      "All are uncut"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Some are cut open",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Are some fruits cut open or are all the fruits uncut?\n\nOptions:\nA. Some are cut open\nB. All are uncut\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 84,
+    "mmvp_pair_index": 84,
+    "source_question_id": "169",
+    "source_partner_question_id": "170",
+    "image_filename": "169.jpg",
+    "partner_image_filename": "170.jpg",
+    "question": "Is there a knee visible in the image?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is there a knee visible in the image?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 85,
+    "mmvp_pair_index": 85,
+    "source_question_id": "172",
+    "source_partner_question_id": "171",
+    "image_filename": "172.jpg",
+    "partner_image_filename": "171.jpg",
+    "question": "Does the snowman in the picture have a mouth?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Does the snowman in the picture have a mouth?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 86,
+    "mmvp_pair_index": 86,
+    "source_question_id": "173",
+    "source_partner_question_id": "174",
+    "image_filename": "173.jpg",
+    "partner_image_filename": "174.jpg",
+    "question": "Is the decoration on the Easter egg flat or raised?",
+    "options": [
+      "Flat",
+      "Raised"
+    ],
+    "allowed_outputs": [
+      "Flat",
+      "Raised"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Flat",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the decoration on the Easter egg flat or raised?\n\nOptions:\nA. Flat\nB. Raised\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 87,
+    "mmvp_pair_index": 87,
+    "source_question_id": "175",
+    "source_partner_question_id": "176",
+    "image_filename": "175.jpg",
+    "partner_image_filename": "176.jpg",
+    "question": "In the image, is the nail polish on the toes dark or light in color?",
+    "options": [
+      "Dark",
+      "Light"
+    ],
+    "allowed_outputs": [
+      "Dark",
+      "Light"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Dark",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: In the image, is the nail polish on the toes dark or light in color?\n\nOptions:\nA. Dark\nB. Light\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 88,
+    "mmvp_pair_index": 88,
+    "source_question_id": "178",
+    "source_partner_question_id": "177",
+    "image_filename": "178.jpg",
+    "partner_image_filename": "177.jpg",
+    "question": "In the picture, is the person facing the ocean or turned sideways to the ocean?",
+    "options": [
+      "Facing the ocean",
+      "Turned sideways to the ocean"
+    ],
+    "allowed_outputs": [
+      "Facing the ocean",
+      "Turned sideways to the ocean"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Turned sideways to the ocean",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: In the picture, is the person facing the ocean or turned sideways to the ocean?\n\nOptions:\nA. Facing the ocean\nB. Turned sideways to the ocean\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 89,
+    "mmvp_pair_index": 89,
+    "source_question_id": "180",
+    "source_partner_question_id": "179",
+    "image_filename": "180.jpg",
+    "partner_image_filename": "179.jpg",
+    "question": "How many wheels can you see in the image?",
+    "options": [
+      "1",
+      "2"
+    ],
+    "allowed_outputs": [
+      "1",
+      "2"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "2",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: How many wheels can you see in the image?\n\nOptions:\nA. 1\nB. 2\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 90,
+    "mmvp_pair_index": 90,
+    "source_question_id": "181",
+    "source_partner_question_id": "182",
+    "image_filename": "181.jpg",
+    "partner_image_filename": "182.jpg",
+    "question": "Is the stripe in the middle of the car blue or white?",
+    "options": [
+      "Blue",
+      "White"
+    ],
+    "allowed_outputs": [
+      "Blue",
+      "White"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Blue",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the stripe in the middle of the car blue or white?\n\nOptions:\nA. Blue\nB. White\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 91,
+    "mmvp_pair_index": 91,
+    "source_question_id": "184",
+    "source_partner_question_id": "183",
+    "image_filename": "184.jpg",
+    "partner_image_filename": "183.jpg",
+    "question": "Are the teddy bears holding hands or leaning against each other?",
+    "options": [
+      "Holding hands",
+      "Leaning against"
+    ],
+    "allowed_outputs": [
+      "Holding hands",
+      "Leaning against"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Leaning against",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Are the teddy bears holding hands or leaning against each other?\n\nOptions:\nA. Holding hands\nB. Leaning against\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 92,
+    "mmvp_pair_index": 92,
+    "source_question_id": "186",
+    "source_partner_question_id": "185",
+    "image_filename": "186.jpg",
+    "partner_image_filename": "185.jpg",
+    "question": "Is the person in the picture already standing on the weighing scale?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the person in the picture already standing on the weighing scale?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 93,
+    "mmvp_pair_index": 93,
+    "source_question_id": "187",
+    "source_partner_question_id": "188",
+    "image_filename": "187.jpg",
+    "partner_image_filename": "188.jpg",
+    "question": "In the picture, is the person stretching out one arm or both arms above their head?",
+    "options": [
+      "One arm",
+      "Both arms"
+    ],
+    "allowed_outputs": [
+      "One arm",
+      "Both arms"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "One arm",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: In the picture, is the person stretching out one arm or both arms above their head?\n\nOptions:\nA. One arm\nB. Both arms\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 94,
+    "mmvp_pair_index": 94,
+    "source_question_id": "190",
+    "source_partner_question_id": "189",
+    "image_filename": "190.jpg",
+    "partner_image_filename": "189.jpg",
+    "question": "Is the person in the picture on the grass or on the gravel path?",
+    "options": [
+      "Grass",
+      "Gravel path"
+    ],
+    "allowed_outputs": [
+      "Grass",
+      "Gravel path"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Gravel path",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the person in the picture on the grass or on the gravel path?\n\nOptions:\nA. Grass\nB. Gravel path\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 95,
+    "mmvp_pair_index": 95,
+    "source_question_id": "191",
+    "source_partner_question_id": "192",
+    "image_filename": "191.jpg",
+    "partner_image_filename": "192.jpg",
+    "question": "Is there a flower next to the Easter egg in the picture?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is there a flower next to the Easter egg in the picture?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 96,
+    "mmvp_pair_index": 96,
+    "source_question_id": "193",
+    "source_partner_question_id": "194",
+    "image_filename": "193.jpg",
+    "partner_image_filename": "194.jpg",
+    "question": "Are these vegetables placed on the floor or on the soil?",
+    "options": [
+      "Floor",
+      "Soil"
+    ],
+    "allowed_outputs": [
+      "Floor",
+      "Soil"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Floor",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Are these vegetables placed on the floor or on the soil?\n\nOptions:\nA. Floor\nB. Soil\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 97,
+    "mmvp_pair_index": 97,
+    "source_question_id": "196",
+    "source_partner_question_id": "195",
+    "image_filename": "196.jpg",
+    "partner_image_filename": "195.jpg",
+    "question": "Are juice and all carrots on the same surface?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Are juice and all carrots on the same surface?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 98,
+    "mmvp_pair_index": 98,
+    "source_question_id": "197",
+    "source_partner_question_id": "198",
+    "image_filename": "197.jpg",
+    "partner_image_filename": "198.jpg",
+    "question": "Is the person weighing themselves barefoot?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the person weighing themselves barefoot?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 99,
+    "mmvp_pair_index": 99,
+    "source_question_id": "200",
+    "source_partner_question_id": "199",
+    "image_filename": "200.jpg",
+    "partner_image_filename": "199.jpg",
+    "question": "Which type of eggs are in the corner of the picture?",
+    "options": [
+      "Quail eggs",
+      "Chicken eggs"
+    ],
+    "allowed_outputs": [
+      "Quail eggs",
+      "Chicken eggs"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Chicken eggs",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Which type of eggs are in the corner of the picture?\n\nOptions:\nA. Quail eggs\nB. Chicken eggs\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 100,
+    "mmvp_pair_index": 100,
+    "source_question_id": "201",
+    "source_partner_question_id": "202",
+    "image_filename": "201.jpg",
+    "partner_image_filename": "202.jpg",
+    "question": "What are the words in the image:",
+    "options": [
+      "\"Happy Easter\"",
+      "\"Happy Easter!\""
+    ],
+    "allowed_outputs": [
+      "\"Happy Easter\"",
+      "\"Happy Easter!\""
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "\"Happy Easter\"",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: What are the words in the image:\n\nOptions:\nA. \"Happy Easter\"\nB. \"Happy Easter!\"\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 101,
+    "mmvp_pair_index": 101,
+    "source_question_id": "204",
+    "source_partner_question_id": "203",
+    "image_filename": "204.jpg",
+    "partner_image_filename": "203.jpg",
+    "question": "Are these oranges hanging on the tree?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Are these oranges hanging on the tree?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 102,
+    "mmvp_pair_index": 102,
+    "source_question_id": "206",
+    "source_partner_question_id": "205",
+    "image_filename": "206.jpg",
+    "partner_image_filename": "205.jpg",
+    "question": "Is the coffee cup made of glass?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the coffee cup made of glass?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 103,
+    "mmvp_pair_index": 103,
+    "source_question_id": "207",
+    "source_partner_question_id": "208",
+    "image_filename": "207.jpg",
+    "partner_image_filename": "208.jpg",
+    "question": "Is the bell pepper in the picture red or yellow?",
+    "options": [
+      "Red",
+      "Yellow"
+    ],
+    "allowed_outputs": [
+      "Red",
+      "Yellow"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Red",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the bell pepper in the picture red or yellow?\n\nOptions:\nA. Red\nB. Yellow\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 104,
+    "mmvp_pair_index": 104,
+    "source_question_id": "210",
+    "source_partner_question_id": "209",
+    "image_filename": "210.jpg",
+    "partner_image_filename": "209.jpg",
+    "question": "Is there an orange with leaves next to the cup?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is there an orange with leaves next to the cup?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 105,
+    "mmvp_pair_index": 105,
+    "source_question_id": "211",
+    "source_partner_question_id": "212",
+    "image_filename": "211.jpg",
+    "partner_image_filename": "212.jpg",
+    "question": "Is the heart-shaped object resting on the palm or being held by the fingers?",
+    "options": [
+      "Palm",
+      "Fingers"
+    ],
+    "allowed_outputs": [
+      "Palm",
+      "Fingers"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Palm",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the heart-shaped object resting on the palm or being held by the fingers?\n\nOptions:\nA. Palm\nB. Fingers\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 106,
+    "mmvp_pair_index": 106,
+    "source_question_id": "214",
+    "source_partner_question_id": "213",
+    "image_filename": "214.jpg",
+    "partner_image_filename": "213.jpg",
+    "question": "Does the snowman have arms made of branches?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Does the snowman have arms made of branches?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 107,
+    "mmvp_pair_index": 107,
+    "source_question_id": "216",
+    "source_partner_question_id": "215",
+    "image_filename": "216.jpg",
+    "partner_image_filename": "215.jpg",
+    "question": "Are there black stripes on the roof of the car?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Are there black stripes on the roof of the car?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 108,
+    "mmvp_pair_index": 108,
+    "source_question_id": "218",
+    "source_partner_question_id": "217",
+    "image_filename": "218.jpg",
+    "partner_image_filename": "217.jpg",
+    "question": "Is the knife laid flat or standing up?",
+    "options": [
+      "Flat",
+      "Standing up"
+    ],
+    "allowed_outputs": [
+      "Flat",
+      "Standing up"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Standing up",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the knife laid flat or standing up?\n\nOptions:\nA. Flat\nB. Standing up\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 109,
+    "mmvp_pair_index": 109,
+    "source_question_id": "220",
+    "source_partner_question_id": "219",
+    "image_filename": "220.jpg",
+    "partner_image_filename": "219.jpg",
+    "question": "Is the person in the image running towards or away from the camera?",
+    "options": [
+      "Towards",
+      "Away from"
+    ],
+    "allowed_outputs": [
+      "Towards",
+      "Away from"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Away from",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the person in the image running towards or away from the camera?\n\nOptions:\nA. Towards\nB. Away from\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 110,
+    "mmvp_pair_index": 110,
+    "source_question_id": "221",
+    "source_partner_question_id": "222",
+    "image_filename": "221.jpg",
+    "partner_image_filename": "222.jpg",
+    "question": "In the photo, is one of the man's hands blocked by the woman?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: In the photo, is one of the man's hands blocked by the woman?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 111,
+    "mmvp_pair_index": 111,
+    "source_question_id": "224",
+    "source_partner_question_id": "223",
+    "image_filename": "224.jpg",
+    "partner_image_filename": "223.jpg",
+    "question": "Is there a pomegranate in the picture?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is there a pomegranate in the picture?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 112,
+    "mmvp_pair_index": 112,
+    "source_question_id": "226",
+    "source_partner_question_id": "225",
+    "image_filename": "226.jpg",
+    "partner_image_filename": "225.jpg",
+    "question": "Are all the cups and bottles in the picture the same height?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Are all the cups and bottles in the picture the same height?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 113,
+    "mmvp_pair_index": 113,
+    "source_question_id": "227",
+    "source_partner_question_id": "228",
+    "image_filename": "227.jpg",
+    "partner_image_filename": "228.jpg",
+    "question": "Does the person in the picture have something in their hand?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Does the person in the picture have something in their hand?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 114,
+    "mmvp_pair_index": 114,
+    "source_question_id": "229",
+    "source_partner_question_id": "230",
+    "image_filename": "229.jpg",
+    "partner_image_filename": "230.jpg",
+    "question": "Do all the bottles in the picture face the same direction?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Do all the bottles in the picture face the same direction?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 115,
+    "mmvp_pair_index": 115,
+    "source_question_id": "232",
+    "source_partner_question_id": "231",
+    "image_filename": "232.jpg",
+    "partner_image_filename": "231.jpg",
+    "question": "Are all easter eggs placed in a container (e.g nest, basket)?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Are all easter eggs placed in a container (e.g nest, basket)?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 116,
+    "mmvp_pair_index": 116,
+    "source_question_id": "234",
+    "source_partner_question_id": "233",
+    "image_filename": "234.jpg",
+    "partner_image_filename": "233.jpg",
+    "question": "Is the sky in the background dark blue or light blue?",
+    "options": [
+      "Dark blue",
+      "Light blue"
+    ],
+    "allowed_outputs": [
+      "Dark blue",
+      "Light blue"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Light blue",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the sky in the background dark blue or light blue?\n\nOptions:\nA. Dark blue\nB. Light blue\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 117,
+    "mmvp_pair_index": 117,
+    "source_question_id": "235",
+    "source_partner_question_id": "236",
+    "image_filename": "235.jpg",
+    "partner_image_filename": "236.jpg",
+    "question": "Do the individuals in the picture face the front or the back?",
+    "options": [
+      "Front",
+      "Back"
+    ],
+    "allowed_outputs": [
+      "Front",
+      "Back"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Front",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Do the individuals in the picture face the front or the back?\n\nOptions:\nA. Front\nB. Back\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 118,
+    "mmvp_pair_index": 118,
+    "source_question_id": "237",
+    "source_partner_question_id": "238",
+    "image_filename": "237.jpg",
+    "partner_image_filename": "238.jpg",
+    "question": "Is the ground completely covered by red fallen leaves?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the ground completely covered by red fallen leaves?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 119,
+    "mmvp_pair_index": 119,
+    "source_question_id": "239",
+    "source_partner_question_id": "240",
+    "image_filename": "239.jpg",
+    "partner_image_filename": "240.jpg",
+    "question": "Are the leather shoes placed side by side or is one on top of the other?",
+    "options": [
+      "Side by side",
+      "One on top of the other"
+    ],
+    "allowed_outputs": [
+      "Side by side",
+      "One on top of the other"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Side by side",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Are the leather shoes placed side by side or is one on top of the other?\n\nOptions:\nA. Side by side\nB. One on top of the other\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 120,
+    "mmvp_pair_index": 120,
+    "source_question_id": "241",
+    "source_partner_question_id": "242",
+    "image_filename": "241.jpg",
+    "partner_image_filename": "242.jpg",
+    "question": "Is the photo taken directly above the coffee or from the side?",
+    "options": [
+      "Above",
+      "From the side"
+    ],
+    "allowed_outputs": [
+      "Above",
+      "From the side"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Above",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the photo taken directly above the coffee or from the side?\n\nOptions:\nA. Above\nB. From the side\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 121,
+    "mmvp_pair_index": 121,
+    "source_question_id": "244",
+    "source_partner_question_id": "243",
+    "image_filename": "244.jpg",
+    "partner_image_filename": "243.jpg",
+    "question": "Is the rabbit in the image facing left or right?",
+    "options": [
+      "Left",
+      "Right"
+    ],
+    "allowed_outputs": [
+      "Left",
+      "Right"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Right",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the rabbit in the image facing left or right?\n\nOptions:\nA. Left\nB. Right\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 122,
+    "mmvp_pair_index": 122,
+    "source_question_id": "246",
+    "source_partner_question_id": "245",
+    "image_filename": "246.jpg",
+    "partner_image_filename": "245.jpg",
+    "question": "Is the elderly person in the picture standing or sitting?",
+    "options": [
+      "Standing",
+      "Sitting"
+    ],
+    "allowed_outputs": [
+      "Standing",
+      "Sitting"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Sitting",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the elderly person in the picture standing or sitting?\n\nOptions:\nA. Standing\nB. Sitting\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 123,
+    "mmvp_pair_index": 123,
+    "source_question_id": "247",
+    "source_partner_question_id": "248",
+    "image_filename": "247.jpg",
+    "partner_image_filename": "248.jpg",
+    "question": "Are there any fruits or vegetables in the heart-shaped part of the picture?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Are there any fruits or vegetables in the heart-shaped part of the picture?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 124,
+    "mmvp_pair_index": 124,
+    "source_question_id": "249",
+    "source_partner_question_id": "250",
+    "image_filename": "249.jpg",
+    "partner_image_filename": "250.jpg",
+    "question": "Is the very top of the cake strawberries or cream?",
+    "options": [
+      "Strawberries",
+      "Cream"
+    ],
+    "allowed_outputs": [
+      "Strawberries",
+      "Cream"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Strawberries",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the very top of the cake strawberries or cream?\n\nOptions:\nA. Strawberries\nB. Cream\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 125,
+    "mmvp_pair_index": 125,
+    "source_question_id": "252",
+    "source_partner_question_id": "251",
+    "image_filename": "252.jpg",
+    "partner_image_filename": "251.jpg",
+    "question": "Is the beverage in the picture contained in a mug or a glass?",
+    "options": [
+      "Mug",
+      "Glass"
+    ],
+    "allowed_outputs": [
+      "Mug",
+      "Glass"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Glass",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the beverage in the picture contained in a mug or a glass?\n\nOptions:\nA. Mug\nB. Glass\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 126,
+    "mmvp_pair_index": 126,
+    "source_question_id": "253",
+    "source_partner_question_id": "254",
+    "image_filename": "253.jpg",
+    "partner_image_filename": "254.jpg",
+    "question": "Is the design in the picture Santa Claus or a snowman?",
+    "options": [
+      "Santa Claus",
+      "Snowman"
+    ],
+    "allowed_outputs": [
+      "Santa Claus",
+      "Snowman"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Santa Claus",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the design in the picture Santa Claus or a snowman?\n\nOptions:\nA. Santa Claus\nB. Snowman\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 127,
+    "mmvp_pair_index": 127,
+    "source_question_id": "256",
+    "source_partner_question_id": "255",
+    "image_filename": "256.jpg",
+    "partner_image_filename": "255.jpg",
+    "question": "Are there cookies stacked on top of other cookies?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Are there cookies stacked on top of other cookies?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 128,
+    "mmvp_pair_index": 128,
+    "source_question_id": "258",
+    "source_partner_question_id": "257",
+    "image_filename": "258.jpg",
+    "partner_image_filename": "257.jpg",
+    "question": "Is there a lemon inside the drink in the cup or are all the lemons outside the drink?",
+    "options": [
+      "There is one inside",
+      "All are outside"
+    ],
+    "allowed_outputs": [
+      "There is one inside",
+      "All are outside"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "All are outside",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is there a lemon inside the drink in the cup or are all the lemons outside the drink?\n\nOptions:\nA. There is one inside\nB. All are outside\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 129,
+    "mmvp_pair_index": 129,
+    "source_question_id": "260",
+    "source_partner_question_id": "259",
+    "image_filename": "260.jpg",
+    "partner_image_filename": "259.jpg",
+    "question": "In the picture, are the elderly people moving to the left or to the right?",
+    "options": [
+      "Left",
+      "Right"
+    ],
+    "allowed_outputs": [
+      "Left",
+      "Right"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Right",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: In the picture, are the elderly people moving to the left or to the right?\n\nOptions:\nA. Left\nB. Right\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 130,
+    "mmvp_pair_index": 130,
+    "source_question_id": "262",
+    "source_partner_question_id": "261",
+    "image_filename": "262.jpg",
+    "partner_image_filename": "261.jpg",
+    "question": "Is the person in the picture sitting on a black or white chair?",
+    "options": [
+      "Black",
+      "White"
+    ],
+    "allowed_outputs": [
+      "Black",
+      "White"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "White",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the person in the picture sitting on a black or white chair?\n\nOptions:\nA. Black\nB. White\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 131,
+    "mmvp_pair_index": 131,
+    "source_question_id": "264",
+    "source_partner_question_id": "263",
+    "image_filename": "264.jpg",
+    "partner_image_filename": "263.jpg",
+    "question": "Is it a slice of cake or a whole cake in the picture?",
+    "options": [
+      "Slice",
+      "Whole"
+    ],
+    "allowed_outputs": [
+      "Slice",
+      "Whole"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Whole",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is it a slice of cake or a whole cake in the picture?\n\nOptions:\nA. Slice\nB. Whole\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 132,
+    "mmvp_pair_index": 132,
+    "source_question_id": "265",
+    "source_partner_question_id": "266",
+    "image_filename": "265.jpg",
+    "partner_image_filename": "266.jpg",
+    "question": "Is the shoe in the image tied or untied?",
+    "options": [
+      "Tied",
+      "Untied"
+    ],
+    "allowed_outputs": [
+      "Tied",
+      "Untied"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Tied",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the shoe in the image tied or untied?\n\nOptions:\nA. Tied\nB. Untied\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 133,
+    "mmvp_pair_index": 133,
+    "source_question_id": "268",
+    "source_partner_question_id": "267",
+    "image_filename": "268.jpg",
+    "partner_image_filename": "267.jpg",
+    "question": "Is the child in the picture facing forward or in profile?",
+    "options": [
+      "Facing forward",
+      "In profile"
+    ],
+    "allowed_outputs": [
+      "Facing forward",
+      "In profile"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "In profile",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the child in the picture facing forward or in profile?\n\nOptions:\nA. Facing forward\nB. In profile\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 134,
+    "mmvp_pair_index": 134,
+    "source_question_id": "270",
+    "source_partner_question_id": "269",
+    "image_filename": "270.jpg",
+    "partner_image_filename": "269.jpg",
+    "question": "Is the wall behind the bed empty or is there a painting hanging on it?",
+    "options": [
+      "Empty",
+      "A painting hanging on it"
+    ],
+    "allowed_outputs": [
+      "Empty",
+      "A painting hanging on it"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "A painting hanging on it",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the wall behind the bed empty or is there a painting hanging on it?\n\nOptions:\nA. Empty\nB. A painting hanging on it\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 135,
+    "mmvp_pair_index": 135,
+    "source_question_id": "272",
+    "source_partner_question_id": "271",
+    "image_filename": "272.jpg",
+    "partner_image_filename": "271.jpg",
+    "question": "Is the male in the picture wearing a shirt or a T-shirt?",
+    "options": [
+      "Shirt",
+      "T-shirt"
+    ],
+    "allowed_outputs": [
+      "Shirt",
+      "T-shirt"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "T-shirt",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the male in the picture wearing a shirt or a T-shirt?\n\nOptions:\nA. Shirt\nB. T-shirt\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 136,
+    "mmvp_pair_index": 136,
+    "source_question_id": "273",
+    "source_partner_question_id": "274",
+    "image_filename": "273.jpg",
+    "partner_image_filename": "274.jpg",
+    "question": "What pattern is in the picture?",
+    "options": [
+      "Pumpkin Lights",
+      "Bats"
+    ],
+    "allowed_outputs": [
+      "Pumpkin Lights",
+      "Bats"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Pumpkin Lights",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: What pattern is in the picture?\n\nOptions:\nA. Pumpkin Lights\nB. Bats\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 137,
+    "mmvp_pair_index": 137,
+    "source_question_id": "275",
+    "source_partner_question_id": "276",
+    "image_filename": "275.jpg",
+    "partner_image_filename": "276.jpg",
+    "question": "How many trees are the treehouse built on?",
+    "options": [
+      "One",
+      "More than one"
+    ],
+    "allowed_outputs": [
+      "One",
+      "More than one"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "One",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: How many trees are the treehouse built on?\n\nOptions:\nA. One\nB. More than one\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 138,
+    "mmvp_pair_index": 138,
+    "source_question_id": "277",
+    "source_partner_question_id": "278",
+    "image_filename": "277.jpg",
+    "partner_image_filename": "278.jpg",
+    "question": "What are all the letter in the image?",
+    "options": [
+      "SUGAR",
+      "UGA"
+    ],
+    "allowed_outputs": [
+      "SUGAR",
+      "UGA"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "SUGAR",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: What are all the letter in the image?\n\nOptions:\nA. SUGAR\nB. UGA\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 139,
+    "mmvp_pair_index": 139,
+    "source_question_id": "279",
+    "source_partner_question_id": "280",
+    "image_filename": "279.jpg",
+    "partner_image_filename": "280.jpg",
+    "question": "Is the elderly person standing or sitting in the picture?",
+    "options": [
+      "Standing",
+      "Sitting"
+    ],
+    "allowed_outputs": [
+      "Standing",
+      "Sitting"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Standing",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the elderly person standing or sitting in the picture?\n\nOptions:\nA. Standing\nB. Sitting\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 140,
+    "mmvp_pair_index": 140,
+    "source_question_id": "282",
+    "source_partner_question_id": "281",
+    "image_filename": "282.jpg",
+    "partner_image_filename": "281.jpg",
+    "question": "Are there drinks on the table?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Are there drinks on the table?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 141,
+    "mmvp_pair_index": 141,
+    "source_question_id": "284",
+    "source_partner_question_id": "283",
+    "image_filename": "284.jpg",
+    "partner_image_filename": "283.jpg",
+    "question": "In the image, is it a salmon fillet or a salmon steak?",
+    "options": [
+      "Salmon fillet",
+      "Salmon steak"
+    ],
+    "allowed_outputs": [
+      "Salmon fillet",
+      "Salmon steak"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Salmon steak",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: In the image, is it a salmon fillet or a salmon steak?\n\nOptions:\nA. Salmon fillet\nB. Salmon steak\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 142,
+    "mmvp_pair_index": 142,
+    "source_question_id": "285",
+    "source_partner_question_id": "286",
+    "image_filename": "285.jpg",
+    "partner_image_filename": "286.jpg",
+    "question": "Do you see a yellow towel in the image?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Yes",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Do you see a yellow towel in the image?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 143,
+    "mmvp_pair_index": 143,
+    "source_question_id": "287",
+    "source_partner_question_id": "288",
+    "image_filename": "287.jpg",
+    "partner_image_filename": "288.jpg",
+    "question": "Is the cup placed on a surface or being held by hand?",
+    "options": [
+      "Placed on a surface",
+      "Held by hand"
+    ],
+    "allowed_outputs": [
+      "Placed on a surface",
+      "Held by hand"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Placed on a surface",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the cup placed on a surface or being held by hand?\n\nOptions:\nA. Placed on a surface\nB. Held by hand\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 144,
+    "mmvp_pair_index": 144,
+    "source_question_id": "289",
+    "source_partner_question_id": "290",
+    "image_filename": "289.jpg",
+    "partner_image_filename": "290.jpg",
+    "question": "Is the following statement correct: There are different colors of grapes in the image.",
+    "options": [
+      "Correct",
+      "Incorrect"
+    ],
+    "allowed_outputs": [
+      "Correct",
+      "Incorrect"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Correct",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the following statement correct: There are different colors of grapes in the image.\n\nOptions:\nA. Correct\nB. Incorrect\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 145,
+    "mmvp_pair_index": 145,
+    "source_question_id": "292",
+    "source_partner_question_id": "291",
+    "image_filename": "292.jpg",
+    "partner_image_filename": "291.jpg",
+    "question": "Is the minion in the image smiling with its tongue out?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the minion in the image smiling with its tongue out?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 146,
+    "mmvp_pair_index": 146,
+    "source_question_id": "293",
+    "source_partner_question_id": "294",
+    "image_filename": "293.jpg",
+    "partner_image_filename": "294.jpg",
+    "question": "Is the sports car in the picture facing left or right?",
+    "options": [
+      "Left",
+      "Right"
+    ],
+    "allowed_outputs": [
+      "Left",
+      "Right"
+    ],
+    "ground_truth_label": "A",
+    "ground_truth_option_index": 0,
+    "ground_truth_option_text": "Left",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the sports car in the picture facing left or right?\n\nOptions:\nA. Left\nB. Right\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 147,
+    "mmvp_pair_index": 147,
+    "source_question_id": "296",
+    "source_partner_question_id": "295",
+    "image_filename": "296.jpg",
+    "partner_image_filename": "295.jpg",
+    "question": "Is the edge of the heart in the picture white or dark-colored?",
+    "options": [
+      "White",
+      "Dark-colored"
+    ],
+    "allowed_outputs": [
+      "White",
+      "Dark-colored"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Dark-colored",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Is the edge of the heart in the picture white or dark-colored?\n\nOptions:\nA. White\nB. Dark-colored\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 148,
+    "mmvp_pair_index": 148,
+    "source_question_id": "298",
+    "source_partner_question_id": "297",
+    "image_filename": "298.jpg",
+    "partner_image_filename": "297.jpg",
+    "question": "Are there patterns on the easter eggs?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "allowed_outputs": [
+      "Yes",
+      "No"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "No",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: Are there patterns on the easter eggs?\n\nOptions:\nA. Yes\nB. No\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  },
+  {
+    "dataset_sample_index": 149,
+    "mmvp_pair_index": 149,
+    "source_question_id": "300",
+    "source_partner_question_id": "299",
+    "image_filename": "300.jpg",
+    "partner_image_filename": "299.jpg",
+    "question": "How would you describe the background of the image?",
+    "options": [
+      "Light shining through the clouds from the upper right corner",
+      "Most of the background is dark and cloudy"
+    ],
+    "allowed_outputs": [
+      "Light shining through the clouds from the upper right corner",
+      "Most of the background is dark and cloudy"
+    ],
+    "ground_truth_label": "B",
+    "ground_truth_option_index": 1,
+    "ground_truth_option_text": "Most of the background is dark and cloudy",
+    "prompt": "Answer the visual multiple-choice question by selecting exactly one option.\n\nQuestion: How would you describe the background of the image?\n\nOptions:\nA. Light shining through the clouds from the upper right corner\nB. Most of the background is dark and cloudy\n\nRespond with exactly the complete text of one option and nothing else. Do not include an option letter, explanation, punctuation, or any other text.",
+    "prompt_version": "mmvp_exact_option_text_v1",
+    "selection_seed": 20260828,
+    "selection_protocol": "one image per consecutive MMVP complementary pair; 75 answer-A pairs and 75 answer-B pairs selected by seeded sampling",
+    "attribution_target_protocol": "attribute the model-selected exact option text; never substitute the ground-truth option when the model prediction is incorrect"
+  }
+]

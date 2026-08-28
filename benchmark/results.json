@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "updated": "2026-08-28",
+  "models": {
+    "qwen": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "internvl": "OpenGVLab/InternVL3_5-8B-HF"
+  },
+  "datasets": {
+    "coco": {
+      "manifest": "shared/coco_mask_tail_250_benchmark.json",
+      "samples": 250,
+      "protocol": "audited COCO val2017 mask-tail subset"
+    },
+    "mmvp": {
+      "manifest": "shared/mmvp_forced_choice_150_seed_20260828.json",
+      "samples": 150,
+      "protocol": "one seeded image from each complementary MMVP pair; 75 A and 75 B answers; exact-option constrained output"
+    }
+  },
+  "metric_protocol": {
+    "faithfulness": "Insertion/deletion AUC; patch methods change 8 merged patches per step and dense methods use 64 equal-fraction steps",
+    "sensitivity_threshold": 0.4,
+    "coco_pointing_game": "shared/eval_point_game_coco.py with pg_criterion=centroid; patch_mode=centroid for patch methods",
+    "mmvp_pointing_game": null
+  },
+  "experiments": {
+    "qwen.coco.ours": {
+      "status": "completed",
+      "runner_available": true,
+      "notes": "Current retained method and old yes/no object prompt.",
+      "metrics": {
+        "insertion_auc": 0.9421,
+        "deletion_auc": 0.1836,
+        "highest_confidence": 0.9886,
+        "sensitive_insertion_auc": 0.9549,
+        "sensitive_deletion_auc": 0.1846,
+        "sensitive_highest_confidence": 0.9935,
+        "point_game_box": 0.756,
+        "point_game_mask": 0.596,
+        "point_game_n": 250,
+        "evaluation_gpu_seconds_per_sample": 12.6253
+      }
+    },
+    "qwen.coco.input_level": {
+      "status": "completed",
+      "runner_available": true,
+      "notes": "Input-space insertion/deletion attribution baseline.",
+      "metrics": {
+        "insertion_auc": 0.9441,
+        "deletion_auc": 0.2135,
+        "highest_confidence": 0.9884,
+        "sensitive_insertion_auc": 0.9555,
+        "sensitive_deletion_auc": 0.2114,
+        "sensitive_highest_confidence": 0.993,
+        "point_game_box": 0.78,
+        "point_game_mask": 0.64,
+        "point_game_n": 250,
+        "evaluation_gpu_seconds_per_sample": 22.1538
+      }
+    },
+    "qwen.coco.eagle": {
+      "status": "completed",
+      "runner_available": true,
+      "notes": "Pointing Game excludes the three audited exception cases, hence n=247.",
+      "metrics": {
+        "insertion_auc": 0.7793,
+        "deletion_auc": 0.1743,
+        "highest_confidence": 0.8995,
+        "sensitive_insertion_auc": 0.8044,
+        "sensitive_deletion_auc": 0.132,
+        "sensitive_highest_confidence": 0.9346,
+        "point_game_box": 0.631578947368421,
+        "point_game_mask": 0.5141700404858299,
+        "point_game_n": 247,
+        "evaluation_gpu_seconds_per_sample": null
+      }
+    },
+    "qwen.coco.tam": {
+      "status": "completed",
+      "runner_available": true,
+      "metrics": {
+        "insertion_auc": 0.5107,
+        "deletion_auc": 0.3801,
+        "highest_confidence": 0.6814,
+        "sensitive_insertion_auc": 0.6288,
+        "sensitive_deletion_auc": 0.3435,
+        "sensitive_highest_confidence": 0.8603,
+        "point_game_box": 0.404,
+        "point_game_mask": 0.332,
+        "point_game_n": 250,
+        "evaluation_gpu_seconds_per_sample": 32.0684
+      }
+    },
+    "qwen.coco.llavacam": {
+      "status": "completed",
+      "runner_available": true,
+      "metrics": {
+        "insertion_auc": 0.4568,
+        "deletion_auc": 0.452,
+        "highest_confidence": 0.6678,
+        "sensitive_insertion_auc": 0.5251,
+        "sensitive_deletion_auc": 0.4691,
+        "sensitive_highest_confidence": 0.866,
+        "point_game_box": 0.236,
+        "point_game_mask": 0.144,
+        "point_game_n": 250,
+        "evaluation_gpu_seconds_per_sample": 33.4711
+      }
+    },
+    "qwen.mmvp.ours": {
+      "status": "runnable_no_result",
+      "runner_available": true,
+      "notes": "Forced-choice MMVP-150 adapter is ready; this protocol needs a fresh run."
+    },
+    "qwen.mmvp.input_level": {
+      "status": "not_implemented",
+      "runner_available": false,
+      "notes": "The input-level code currently implements the COCO yes/no protocol only."
+    },
+    "qwen.mmvp.eagle": {
+      "status": "not_implemented",
+      "runner_available": false,
+      "notes": "The repository contains a legacy free-form MMVP-300 EAGLE runner, not a forced-choice MMVP-150 adapter."
+    },
+    "qwen.mmvp.tam": {
+      "status": "not_implemented",
+      "runner_available": false,
+      "notes": "No forced-choice MMVP-150 TAM adapter exists yet."
+    },
+    "qwen.mmvp.llavacam": {
+      "status": "not_implemented",
+      "runner_available": false,
+      "notes": "No forced-choice MMVP-150 LLaVA-CAM adapter exists yet."
+    },
+    "internvl.coco.ours": {
+      "status": "empty_for_later",
+      "runner_available": false,
+      "notes": "Intentionally left empty: our method has not been ported to InternVL."
+    },
+    "internvl.coco.input_level": {
+      "status": "not_implemented",
+      "runner_available": false,
+      "notes": "The input-level method is also Qwen-specific and has not been ported to InternVL."
+    },
+    "internvl.coco.eagle": {
+      "status": "runnable_no_result",
+      "runner_available": true,
+      "notes": "InternVL3.5-8B-HF attribution and evaluation launchers are ready."
+    },
+    "internvl.coco.tam": {
+      "status": "runnable_no_result",
+      "runner_available": true,
+      "notes": "InternVL3.5-8B-HF attribution and evaluation launchers are ready."
+    },
+    "internvl.coco.llavacam": {
+      "status": "runnable_no_result",
+      "runner_available": true,
+      "notes": "InternVL3.5-8B-HF attribution and evaluation launchers are ready."
+    },
+    "internvl.mmvp.ours": {
+      "status": "empty_for_later",
+      "runner_available": false,
+      "notes": "Intentionally left empty: our method has not been ported to InternVL."
+    },
+    "internvl.mmvp.input_level": {
+      "status": "not_implemented",
+      "runner_available": false,
+      "notes": "Neither an InternVL input-level port nor a forced-choice MMVP adapter exists."
+    },
+    "internvl.mmvp.eagle": {
+      "status": "not_implemented",
+      "runner_available": false,
+      "notes": "InternVL EAGLE currently supports the COCO caption-target protocol only."
+    },
+    "internvl.mmvp.tam": {
+      "status": "not_implemented",
+      "runner_available": false,
+      "notes": "InternVL TAM currently supports the COCO caption-target protocol only."
+    },
+    "internvl.mmvp.llavacam": {
+      "status": "not_implemented",
+      "runner_available": false,
+      "notes": "InternVL LLaVA-CAM currently supports the COCO caption-target protocol only."
+    }
+  },
+  "legacy_results_not_comparable": {
+    "mmvp_300_free_form": {
+      "notes": "These older 300-image free-form results use a different prompt, target, and sample count. They are retained only as provenance and must not be inserted into the forced-choice MMVP-150 matrix.",
+      "qwen_ours": {
+        "insertion_auc": 0.7729,
+        "deletion_auc": 0.7296,
+        "highest_confidence": 0.8032,
+        "sensitive_insertion_auc": 0.5878,
+        "sensitive_deletion_auc": 0.4417,
+        "sensitive_highest_confidence": 0.7214
+      },
+      "qwen_eagle_paper": {
+        "insertion_auc": 0.7824,
+        "deletion_auc": 0.6996,
+        "highest_confidence": 0.8119,
+        "sensitive_insertion_auc": 0.5901,
+        "sensitive_deletion_auc": 0.3675,
+        "sensitive_highest_confidence": 0.7362
+      }
+    }
+  }
+}
