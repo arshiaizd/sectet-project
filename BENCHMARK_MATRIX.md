@@ -9,13 +9,13 @@ this matrix. The checkpoints are `Qwen/Qwen2.5-VL-7B-Instruct` and
 
 | Model | Dataset | Ours | Input-level | EAGLE | TAM | LLaVA-CAM |
 |---|---|---:|---:|---:|---:|---:|
-| Qwen2.5-VL-7B | COCO-250 | completed | completed | completed | completed | completed |
+| Qwen2.5-VL-7B | COCO mask-tail-150 | completed | completed | runnable | completed | completed |
 | Qwen2.5-VL-7B | MMVP forced-choice-150 | runnable | runnable | runnable | runnable | runnable |
 | InternVL3.5-8B-HF | COCO-250 | empty for later | not implemented | runnable | runnable | runnable |
 | InternVL3.5-8B-HF | MMVP forced-choice-150 | empty for later | not implemented | runnable | runnable | runnable |
 
 “Runnable” means attribution and faithfulness evaluation launchers exist.
-“Completed” means final numbers are tracked in `benchmark/results.json`, so the
+“Completed” means final numbers for the current cohort are tracked in `benchmark/results.json`, so the
 dispatcher reuses them by default. “Not implemented” is deliberate: the
 dispatcher exits instead of silently applying Qwen-specific code to InternVL or
 the old free-form MMVP protocol to the new forced-choice subset.
@@ -26,8 +26,11 @@ gap is recorded rather than hidden. InternVL EAGLE/TAM/LLaVA-CAM support both th
 
 ## Canonical data protocols
 
-- COCO uses `shared/coco_mask_tail_250_benchmark.json` and requires COCO 2017
-  `val2017` images. It includes audited captions, targets, boxes, and masks.
+- Current reported COCO results use
+  `shared/coco_mask_tail_150_drop100_smallest_masks.json`. This is the 150-case
+  cohort left after excluding the 100 lowest target-mask pixel counts from the
+  audited 250-case benchmark (ties broken by image ID). It requires COCO 2017
+  `val2017` images and includes audited captions, targets, boxes, and masks.
 - MMVP uses `shared/mmvp_forced_choice_150_seed_20260828.json`: one seeded image
   from each complementary pair and exactly 75 A/75 B answers. The model emits
   exactly one complete option text. Attribution targets the model-selected
@@ -78,16 +81,19 @@ Completed Qwen/COCO cells print tracked results and do not load a model. Add
 `runs/MODEL/DATASET/METHOD`; `--output-dir` puts them elsewhere. Resubmitting
 the same command resumes at existing per-image/CSV boundaries.
 
-### Five completed Qwen/COCO experiments
+### Four completed Qwen/COCO mask-tail-150 experiments
 
 These commands return stored final numbers. Add `--force-rerun`, `--data-dir`,
 and `--model-path` to rerun.
 
 ```bash
-for method in ours input_level eagle tam llavacam; do
+for method in ours input_level tam llavacam; do
   ./scripts/run_experiment.sh --method "$method" --dataset coco --model qwen
 done
 ```
+
+EAGLE remains runnable, but its previous COCO-250 numbers are not mixed with
+this 150-case result cohort.
 
 Example forced rerun:
 

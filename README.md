@@ -12,6 +12,8 @@ outputs are deliberately not tracked.
 
 - `shared/coco_mask_tail_30_benchmark.json`: 30-case pilot.
 - `shared/coco_mask_tail_250_benchmark.json`: canonical 250-case benchmark.
+- `shared/coco_mask_tail_150_drop100_smallest_masks.json`: reported 150-case
+  cohort after excluding the 100 smallest target masks from the canonical 250.
 - `shared/eval_point_game_coco.py`: shared centroid-based Point Game evaluator.
 
 The earlier EAGLE-baseline experiment manifest and its four worker shards are
