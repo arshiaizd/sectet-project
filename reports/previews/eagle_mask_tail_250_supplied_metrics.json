@@ -1,0 +1,19 @@
+{
+  "method": "EAGLE",
+  "model": "Qwen/Qwen2.5-VL-7B-Instruct",
+  "dataset": "COCO mask-tail 250",
+  "manifest": "shared/coco_mask_tail_250_benchmark.json",
+  "count": 250,
+  "provenance": "Aggregate values supplied by the user on 2026-09-03; no per-image EAGLE artifact was available in the repository at recording time.",
+  "metrics": {
+    "insertion_auc": {"mean": 0.6688, "standard_error": null, "n": 250},
+    "deletion_auc": {"mean": 0.2351, "standard_error": null, "n": 250},
+    "highest_confidence": {"mean": 0.7771, "standard_error": null, "n": 250},
+    "sensitive_insertion_auc": {"mean": 0.8181, "standard_error": null, "n": null},
+    "sensitive_deletion_auc": {"mean": 0.1674, "standard_error": null, "n": null},
+    "sensitive_highest_confidence": {"mean": 0.9206, "standard_error": null, "n": null},
+    "point_game_box": {"mean": 0.504, "standard_error": 0.031685198551199195, "n": 250, "hits": 126},
+    "point_game_mask": {"mean": 0.412, "standard_error": 0.031191596026022821, "n": 250, "hits": 103}
+  },
+  "evaluation_gpu_seconds_per_sample": null
+}

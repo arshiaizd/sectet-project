@@ -218,6 +218,16 @@
       "notes": "InternVL LLaVA-CAM targets the joint score of all predicted exact-option answer tokens."
     }
   },
+  "additional_completed_cohorts": {
+    "qwen.coco_mask_tail_250": {
+      "manifest": "shared/coco_mask_tail_250_benchmark.json",
+      "samples": 250,
+      "status": "completed_all_five_methods",
+      "aggregate_results": "reports/previews/mask_tail_250_metrics_summary.csv",
+      "eagle_provenance": "reports/previews/eagle_mask_tail_250_supplied_metrics.json",
+      "notes": "Kept separate from the current COCO mask-tail-150 registry entries. EAGLE aggregate values were supplied by the user; its per-image results, non-Pointing-Game standard errors, sensitive sample counts, and runtime were unavailable."
+    }
+  },
   "legacy_results_not_comparable": {
     "mmvp_300_free_form": {
       "notes": "These older 300-image free-form results use a different prompt, target, and sample count. They are retained only as provenance and must not be inserted into the forced-choice MMVP-150 matrix.",

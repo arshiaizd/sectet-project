@@ -95,6 +95,16 @@ done
 EAGLE remains runnable, but its previous COCO-250 numbers are not mixed with
 this 150-case result cohort.
 
+### Completed Qwen/COCO mask-tail-250 cohort
+
+All five methods also have aggregate results on the full mask-tail 250 cohort.
+They are kept separately in
+`reports/previews/mask_tail_250_metrics_summary.csv`. The EAGLE aggregate was
+supplied after the run; its provenance record is
+`reports/previews/eagle_mask_tail_250_supplied_metrics.json`. EAGLE per-image
+results, non-Pointing-Game standard errors, sensitive sample counts, and runtime
+were not available and are therefore left empty rather than inferred.
+
 Example forced rerun:
 
 ```bash
