@@ -17,7 +17,7 @@ OUTPUT="$(resolve_output_path "${3:-$ATTRIBUTION_PATH/evaluation_segmentation_ap
 MANIFEST="${4:-$REPO/shared/coco_mask_tail_250_benchmark.json}"
 
 [[ -f "$MANIFEST" ]] || die "Manifest does not exist: $MANIFEST"
-[[ -d "$ATTRIBUTION_PATH" ]] || die "Attribution path does not exist: $ATTRIBUTION_PATH"
+[[ -e "$ATTRIBUTION_PATH" ]] || die "Attribution path does not exist: $ATTRIBUTION_PATH"
 mkdir -p "$OUTPUT"
 
 COMMON=(
@@ -43,11 +43,17 @@ case "$METHOD" in
       "${COMMON[@]}"
     ;;
   eagle)
-    [[ -d "$ATTRIBUTION_PATH/json" && -d "$ATTRIBUTION_PATH/npy" ]] || \
-      die "EAGLE attribution path must contain json/ and npy/: $ATTRIBUTION_PATH"
-    "$PYTHON" "$REPO/shared/eval_segmentation_average_precision_coco.py" \
-      --map-source eagle --explanation-dir "$ATTRIBUTION_PATH" \
-      "${COMMON[@]}"
+    if [[ -f "$ATTRIBUTION_PATH" && "$ATTRIBUTION_PATH" == *.zip ]]; then
+      "$PYTHON" "$REPO/shared/eval_segmentation_average_precision_coco.py" \
+        --map-source eagle --eagle-zip "$ATTRIBUTION_PATH" \
+        "${COMMON[@]}"
+    else
+      [[ -d "$ATTRIBUTION_PATH/json" && -d "$ATTRIBUTION_PATH/npy" ]] || \
+        die "EAGLE path must be a ZIP or a directory containing json/ and npy/: $ATTRIBUTION_PATH"
+      "$PYTHON" "$REPO/shared/eval_segmentation_average_precision_coco.py" \
+        --map-source eagle --explanation-dir "$ATTRIBUTION_PATH" \
+        "${COMMON[@]}"
+    fi
     ;;
   *)
     die "Method must be one of: ours, input_level, eagle, tam, llavacam"

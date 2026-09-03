@@ -17,7 +17,7 @@ mkdir -p "$OUTPUT_ROOT"
   "$OUTPUT_ROOT/input_level" "$MANIFEST"
 
 "$SCRIPT_DIR/evaluate_eagle_segmentation_ap_coco_250.sh" \
-  "$REPO/eagle/results/eagle_mask_tail_250_portable" \
+  "$REPO/eagle/results/bundles/qwen_coco_mask_tail_250_segmentation_auprc.zip" \
   "$OUTPUT_ROOT/eagle" "$MANIFEST"
 
 "$SCRIPT_DIR/evaluate_segmentation_ap_coco.sh" \

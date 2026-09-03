@@ -12,12 +12,20 @@ fi
 REPO="$(repo_root)"
 EAGLE_OUTPUT="$(resolve_output_path "$1")"
 DEFAULT_SLICO="$EAGLE_OUTPUT/slico-1.0-1.0-division-number-64"
-if [[ -d "$DEFAULT_SLICO/json" && -d "$DEFAULT_SLICO/npy" ]]; then
+if [[ -f "$EAGLE_OUTPUT" && "$EAGLE_OUTPUT" == *.zip ]]; then
+  EXPLANATION_DIR="$EAGLE_OUTPUT"
+elif [[ -d "$DEFAULT_SLICO/json" && -d "$DEFAULT_SLICO/npy" ]]; then
   EXPLANATION_DIR="$DEFAULT_SLICO"
 else
   EXPLANATION_DIR="$EAGLE_OUTPUT"
 fi
-OUTPUT="${2:-$EAGLE_OUTPUT/evaluation_segmentation_ap_224}"
+if [[ -n "${2:-}" ]]; then
+  OUTPUT="$2"
+elif [[ -f "$EAGLE_OUTPUT" ]]; then
+  OUTPUT="${EAGLE_OUTPUT%.zip}_evaluation_segmentation_ap_224"
+else
+  OUTPUT="$EAGLE_OUTPUT/evaluation_segmentation_ap_224"
+fi
 MANIFEST="${3:-$REPO/shared/coco_mask_tail_250_benchmark.json}"
 
 exec "$SCRIPT_DIR/evaluate_segmentation_ap_coco.sh" \

@@ -16,7 +16,9 @@ import json
 import math
 import os
 from pathlib import Path
+from pathlib import PurePosixPath
 from typing import Any
+from zipfile import ZipFile
 
 import numpy as np
 import pandas as pd
@@ -150,6 +152,41 @@ def eagle_map(explanation_dir: Path, name: str) -> np.ndarray:
     return attribution_map
 
 
+def find_eagle_zip_prefix(archive: ZipFile) -> str:
+    names = set(archive.namelist())
+    candidates: dict[str, int] = {}
+    for name in names:
+        path = PurePosixPath(name)
+        if len(path.parts) < 3 or path.suffix != ".json" or path.parent.name != "json":
+            continue
+        prefix = str(path.parent.parent)
+        matching_npy = f"{prefix}/npy/{path.stem}.npy"
+        if matching_npy in names:
+            candidates[prefix] = candidates.get(prefix, 0) + 1
+    if not candidates:
+        raise ValueError("ZIP contains no matching EAGLE json/ and npy/ pairs")
+    best_count = max(candidates.values())
+    best = sorted(prefix for prefix, count in candidates.items() if count == best_count)
+    if len(best) != 1:
+        raise ValueError(f"ZIP has ambiguous EAGLE roots with {best_count} pairs: {best}")
+    return best[0]
+
+
+def eagle_map_from_zip(archive: ZipFile, prefix: str, name: str) -> np.ndarray:
+    stem = Path(name).stem
+    json_member = f"{prefix}/json/{stem}.json"
+    npy_member = f"{prefix}/npy/{stem}.npy"
+    try:
+        with archive.open(json_member) as stream:
+            saved = json.load(stream)
+        with archive.open(npy_member) as stream:
+            superpixel_masks = np.load(stream)
+    except KeyError as error:
+        raise FileNotFoundError(f"missing EAGLE ZIP member: {error}") from error
+    attribution_map, _ = add_value(superpixel_masks, saved)
+    return attribution_map
+
+
 def summarize(values: list[float]) -> dict[str, Any]:
     return {
         "mean": float(np.mean(values)),
@@ -170,8 +207,14 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     patch_frame: pd.DataFrame | None = None
     score_column: str | None = None
     explanation_dir: Path | None = None
+    eagle_archive: ZipFile | None = None
+    eagle_zip_prefix: str | None = None
     if args.map_source == "patch":
         patch_frame, score_column = load_patch_csvs(args.csv, args.score_column)
+    elif args.map_source == "eagle" and args.eagle_zip:
+        eagle_archive = ZipFile(Path(args.eagle_zip).resolve())
+        eagle_zip_prefix = find_eagle_zip_prefix(eagle_archive)
+        print(f"EAGLE ZIP root: {eagle_zip_prefix}")
     else:
         explanation_dir = Path(args.explanation_dir).resolve()
         if not explanation_dir.is_dir():
@@ -206,6 +249,9 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             elif args.map_source == "dense":
                 assert explanation_dir is not None
                 raw_map = dense_map(explanation_dir, name)
+            elif eagle_archive is not None:
+                assert eagle_zip_prefix is not None
+                raw_map = eagle_map_from_zip(eagle_archive, eagle_zip_prefix, name)
             else:
                 assert explanation_dir is not None
                 raw_map = eagle_map(explanation_dir, name)
@@ -242,9 +288,14 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             )
             print(f"[error] {message}")
 
+    if eagle_archive is not None:
+        eagle_archive.close()
+
     summary = {
         "metric": "per-image segmentation precision-recall AUC",
         "map_source": args.map_source,
+        "eagle_zip": str(Path(args.eagle_zip).resolve()) if args.eagle_zip else None,
+        "eagle_zip_root": eagle_zip_prefix,
         "score_column": score_column,
         "interpolation": "torch bicubic, align_corners=False",
         "normalization": "per-image min-max to [0,1]",
@@ -293,6 +344,10 @@ def parse_args() -> argparse.Namespace:
         "--explanation-dir",
         help="dense directory containing npy/, or EAGLE slico directory containing json/ and npy/",
     )
+    parser.add_argument(
+        "--eagle-zip",
+        help="EAGLE result ZIP containing a slico directory with matching json/ and npy/ pairs",
+    )
     parser.add_argument("--begin", type=int, default=0)
     parser.add_argument("--end", type=int, default=-1)
     parser.add_argument(
@@ -309,8 +364,12 @@ def parse_args() -> argparse.Namespace:
         parser.error("--resolution must be 0 or a positive integer")
     if args.map_source == "patch" and not args.csv:
         parser.error("--map-source patch requires --csv")
-    if args.map_source in ("dense", "eagle") and not args.explanation_dir:
-        parser.error(f"--map-source {args.map_source} requires --explanation-dir")
+    if args.map_source == "dense" and not args.explanation_dir:
+        parser.error("--map-source dense requires --explanation-dir")
+    if args.map_source == "eagle":
+        supplied = int(bool(args.explanation_dir)) + int(bool(args.eagle_zip))
+        if supplied != 1:
+            parser.error("--map-source eagle requires exactly one of --explanation-dir or --eagle-zip")
     return args
 
 
