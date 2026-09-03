@@ -13,7 +13,11 @@
     "sensitive_deletion_auc": {"mean": 0.1674, "standard_error": null, "n": null},
     "sensitive_highest_confidence": {"mean": 0.9206, "standard_error": null, "n": null},
     "point_game_box": {"mean": 0.504, "standard_error": 0.031685198551199195, "n": 250, "hits": 126},
-    "point_game_mask": {"mean": 0.412, "standard_error": 0.031191596026022821, "n": 250, "hits": 103}
+    "point_game_mask": {"mean": 0.412, "standard_error": 0.031191596026022821, "n": 250, "hits": 103},
+    "segmentation_auprc_foreground": {"mean": 0.2371867401, "standard_error": null, "n": 250},
+    "segmentation_auprc_background": {"mean": 0.8727919825, "standard_error": null, "n": 250}
   },
+  "segmentation_auprc_resolution": [224, 224],
+  "segmentation_auprc_per_image_rows": 250,
   "evaluation_gpu_seconds_per_sample": null
 }

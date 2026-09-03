@@ -100,6 +100,17 @@ launchers produce:
 - Point Game box and segmentation-mask metrics using the shared centroid
   evaluator.
 
+The shared `eval_segmentation_average_precision_coco.py` evaluator additionally
+computes per-image foreground and background segmentation precision-recall AUC
+from COCO polygon/RLE masks. It supports patch CSVs (Ours and Input-level),
+dense `.npy` maps (TAM and LLaVA-CAM), and EAGLE's reconstructed submodular map.
+All sources use the same fixed `224x224` protocol by default. Run it through
+`scripts/evaluate_segmentation_ap_coco.sh` after attribution; the dedicated
+EAGLE wrapper is `scripts/evaluate_eagle_segmentation_ap_coco_250.sh`.
+
+For the standard local COCO mask-tail-250 result directories, run all five
+methods with `scripts/evaluate_segmentation_ap_coco_250_all.sh`.
+
 Generated outputs are stored below each method's `results/` directory and are
 ignored by Git.
 
