@@ -21,12 +21,13 @@ from typing import Any
 from zipfile import ZipFile
 
 import numpy as np
+from numpy.lib import format as npy_format
 import pandas as pd
 import torch
 import torch.nn.functional as F
-from sklearn.metrics import auc, precision_recall_curve
+from PIL import Image
 
-from eval_point_game_coco import add_value, segmentation_to_mask
+from eval_point_game_coco import segmentation_to_mask
 
 
 EPS = 1e-8
@@ -62,21 +63,37 @@ def normalize_unit_interval(score_map: np.ndarray) -> np.ndarray:
 
 
 def resize_binary_mask(mask: np.ndarray, height: int, width: int) -> np.ndarray:
-    tensor = torch.from_numpy(np.asarray(mask, dtype=np.float32))[None, None]
-    if mask.shape != (height, width):
-        tensor = F.interpolate(tensor, size=(height, width), mode="nearest")
-    return (tensor[0, 0].numpy() > 0).astype(np.uint8)
+    binary = np.asarray(mask, dtype=np.uint8)
+    if binary.shape != (height, width):
+        binary = np.asarray(
+            Image.fromarray(binary).resize(
+                (width, height), resample=Image.Resampling.NEAREST
+            ),
+            dtype=np.uint8,
+        )
+    return (binary > 0).astype(np.uint8)
 
 
 def binary_auprc(scores: np.ndarray, target: np.ndarray) -> float:
-    y_score = np.asarray(scores, dtype=np.float32).reshape(-1)
+    """Match torcheval.functional.binary_auprc, including tie grouping."""
+    y_score = np.asarray(scores, dtype=np.float64).reshape(-1)
     y_true = np.asarray(target, dtype=np.uint8).reshape(-1)
     if y_score.shape != y_true.shape:
         raise ValueError(f"score/target shape mismatch: {y_score.shape} vs {y_true.shape}")
-    if not np.any(y_true):
+    positives = int(y_true.sum())
+    if positives == 0:
         raise ValueError("AUPRC target has no positive pixels")
-    precision, recall, _ = precision_recall_curve(y_true, y_score)
-    return float(auc(recall, precision))
+    order = np.argsort(y_score, kind="stable")[::-1]
+    sorted_scores = y_score[order]
+    sorted_target = y_true[order]
+    threshold_ends = np.concatenate(
+        (np.flatnonzero(np.diff(sorted_scores)), np.asarray([len(sorted_scores) - 1]))
+    )
+    true_positives = np.cumsum(sorted_target, dtype=np.int64)[threshold_ends]
+    predicted_positives = threshold_ends + 1
+    precision = true_positives / predicted_positives
+    recall = true_positives / positives
+    return float(np.sum(np.diff(np.concatenate(([0.0], recall))) * precision))
 
 
 def standard_error(values: list[float]) -> float:
@@ -147,9 +164,40 @@ def eagle_map(explanation_dir: Path, name: str) -> np.ndarray:
     if not npy_path.is_file():
         raise FileNotFoundError(f"missing EAGLE superpixel masks: {npy_path}")
     saved = json.loads(json_path.read_text(encoding="utf-8"))
-    superpixel_masks = np.load(npy_path)
-    attribution_map, _ = add_value(superpixel_masks, saved)
-    return attribution_map
+    superpixel_masks = np.load(npy_path, mmap_mode="r")
+    return eagle_score_map(superpixel_masks, saved, str(npy_path))
+
+
+def eagle_increments(saved: dict[str, Any]) -> np.ndarray:
+    smdl = np.asarray(saved["smdl_score"], dtype=np.float64)
+    org = np.asarray(saved["org_score"], dtype=np.float64)
+    baseline = np.asarray(saved["baseline_score"], dtype=np.float64)
+    previous = np.concatenate(([np.mean(1.0 - org + baseline)], smdl[:-1]))
+    return smdl - previous
+
+
+def normalize_eagle_map(score_map: np.ndarray) -> np.ndarray:
+    score_map -= float(score_map.min())
+    score_map /= float(score_map.max()) + EPS
+    return score_map
+
+
+def eagle_score_map(regions: np.ndarray, saved: dict[str, Any], source: str) -> np.ndarray:
+    increments = eagle_increments(saved)
+    if len(regions) != len(increments):
+        raise ValueError(
+            f"EAGLE region/score mismatch: {len(regions)} masks and "
+            f"{len(increments)} scores in {source}"
+        )
+    if regions.ndim not in (3, 4) or (regions.ndim == 4 and regions.shape[-1] != 1):
+        raise ValueError(f"Unexpected EAGLE array shape {regions.shape}: {source}")
+    score_map = np.zeros(regions.shape[1:3], dtype=np.float32)
+    value = 0.0
+    for region, increment in zip(regions, increments):
+        value -= abs(float(increment))
+        region_mask = np.squeeze(region, axis=-1) if region.ndim == 3 else region
+        score_map[region_mask == 1] = value
+    return normalize_eagle_map(score_map)
 
 
 def find_eagle_zip_prefix(archive: ZipFile) -> str:
@@ -180,11 +228,43 @@ def eagle_map_from_zip(archive: ZipFile, prefix: str, name: str) -> np.ndarray:
         with archive.open(json_member) as stream:
             saved = json.load(stream)
         with archive.open(npy_member) as stream:
-            superpixel_masks = np.load(stream)
+            version = npy_format.read_magic(stream)
+            shape, fortran_order, dtype = npy_format._read_array_header(stream, version)
+            if fortran_order:
+                raise ValueError(f"Fortran-order EAGLE array is unsupported: {npy_member}")
+            if dtype.hasobject:
+                raise ValueError(f"Object EAGLE array is unsupported: {npy_member}")
+            if len(shape) not in (3, 4) or (len(shape) == 4 and shape[-1] != 1):
+                raise ValueError(f"Unexpected EAGLE array shape {shape}: {npy_member}")
+
+            value_list = eagle_increments(saved)
+            if len(value_list) != shape[0]:
+                raise ValueError(
+                    f"EAGLE region/score mismatch: {shape[0]} masks and "
+                    f"{len(value_list)} scores in {npy_member}"
+                )
+
+            # The archived arrays are large int64 one-hot stacks. Reconstruct
+            # the same native-resolution map one region at a time so memory is
+            # O(H*W), rather than O(regions*H*W). This is numerically identical
+            # to the supplied EAGLE evaluator; only the ZIP loading differs.
+            plane_shape = shape[1:]
+            plane_elements = int(np.prod(plane_shape, dtype=np.int64))
+            plane_bytes = plane_elements * dtype.itemsize
+            single_mask = np.zeros(plane_shape, dtype=np.float32)
+            value = 0.0
+            for smdl_value in value_list:
+                raw = stream.read(plane_bytes)
+                if len(raw) != plane_bytes:
+                    raise ValueError(f"Truncated EAGLE array member: {npy_member}")
+                region_mask = np.frombuffer(raw, dtype=dtype).reshape(plane_shape)
+                value -= abs(float(smdl_value))
+                single_mask[region_mask == 1] = value
     except KeyError as error:
         raise FileNotFoundError(f"missing EAGLE ZIP member: {error}") from error
-    attribution_map, _ = add_value(superpixel_masks, saved)
-    return attribution_map
+    if single_mask.ndim == 3:
+        single_mask = np.squeeze(single_mask, axis=-1)
+    return normalize_eagle_map(single_mask)
 
 
 def summarize(values: list[float]) -> dict[str, Any]:
@@ -292,12 +372,13 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         eagle_archive.close()
 
     summary = {
-        "metric": "per-image segmentation precision-recall AUC",
+        "metric": "per-image torcheval-compatible binary AUPRC with grouped ties",
         "map_source": args.map_source,
         "eagle_zip": str(Path(args.eagle_zip).resolve()) if args.eagle_zip else None,
         "eagle_zip_root": eagle_zip_prefix,
         "score_column": score_column,
         "interpolation": "torch bicubic, align_corners=False",
+        "mask_interpolation": "PIL nearest-neighbor",
         "normalization": "per-image min-max to [0,1]",
         "resolution": (
             [args.resolution, args.resolution]
